@@ -1,5 +1,3 @@
-import "./Body.css";
-
 import React from 'react'
 
 const Body = ({ pageBody }) => {
