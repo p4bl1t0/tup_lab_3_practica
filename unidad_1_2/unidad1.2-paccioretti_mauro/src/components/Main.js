@@ -1,7 +1,7 @@
 import React from "react";
 import Body from "./Body";
 
-const Main = ({ pageBody, enlace1, enlace2 }) => {
+const Main = ({ pageBody, enlace1, enlace2, children }) => {
   return (
     <div>
       <nav>
@@ -19,6 +19,7 @@ const Main = ({ pageBody, enlace1, enlace2 }) => {
         </ul>
       </nav>
       <Body body={pageBody} />
+      <p>{children}</p>
     </div>
   );
 };
