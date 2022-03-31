@@ -1,12 +1,20 @@
 import "./App.css";
-import Title from "./components/Title";
-import Body from "./components/Body";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 function App() {
+  const site = {
+    pageTitle: "Unidad 1.2 - Práctica",
+    pageBody: "Implementación de árbol de componentes y propiedades en React.",
+  };
   return (
     <div className="App">
-      <Title pageTitle="Título de la página"></Title>
-      <Body pageBody="Cuerpo de la página"></Body>
+      <Header pageTitle={site.pageTitle}></Header>
+      <Main
+        linkOne="https://www.google.com/"
+        linkTwo="https://www.youtube.com/"
+        pageBody={site.pageBody}
+      ></Main>
     </div>
   );
 }
