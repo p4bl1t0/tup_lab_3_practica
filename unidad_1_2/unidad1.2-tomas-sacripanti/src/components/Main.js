@@ -15,6 +15,9 @@ const Main = ({ linkOne, linkTwo, pageBody }) => {
         </ul>
       </nav>
       <Body pageBody={pageBody}></Body>
+      <div>
+        <p>Esta es una frase creada por Tomás Sacripanti</p>
+      </div>
     </div>
   );
 };

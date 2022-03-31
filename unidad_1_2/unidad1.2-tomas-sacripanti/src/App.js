@@ -1,6 +1,5 @@
 import "./App.css";
-import Header from "./components/Header";
-import Main from "./components/Main";
+import Page from "./components/Page.js";
 
 function App() {
   const site = {
@@ -9,12 +8,7 @@ function App() {
   };
   return (
     <div className="App">
-      <Header pageTitle={site.pageTitle}></Header>
-      <Main
-        linkOne="https://www.google.com/"
-        linkTwo="https://www.youtube.com/"
-        pageBody={site.pageBody}
-      ></Main>
+      <Page pageTitle={site.pageTitle} pageBody={site.pageBody}></Page>
     </div>
   );
 }
