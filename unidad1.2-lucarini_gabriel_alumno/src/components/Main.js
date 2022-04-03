@@ -10,6 +10,8 @@ const Main = ({ li1, li2, pageBody }) => {
             </ul>
         </nav>
         <Body pageBody={pageBody}/>
+        <p>Nadie tiene éxito sin esfuerzo. Aquellos que tienen éxito
+             se lo deben a la perseverancia (Ramana Maharshi)</p>
         </div>
       );
 };

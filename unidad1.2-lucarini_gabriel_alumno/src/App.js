@@ -1,6 +1,5 @@
 import './App.css';
-import Header from "./components/Header";
-import Main from "./components/Main";
+import Page from "./components/Page";
 
 const site = {
   pageTitle: 'Unidad 1.2 - Práctica',
@@ -12,11 +11,7 @@ function App() {
 
   return (
     <div>
-      <Header pageTitle={site.pageTitle}/>
-      <Main         
-        li1="https://www.google.com.ar/"
-        li2="https://www.infobae.com/"
-        pageBody={site.pageBody}/>
+      <Page pageTitle={site.pageTitle} pageBody={site.pageBody}></Page>
     </div>
   );
 }
