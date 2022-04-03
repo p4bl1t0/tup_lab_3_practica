@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div>
-      <Page pageTitle={site.pageTitle} pageBody={site.pageBody}></Page>
+      <Page pageTitle={site.pageTitle} pageBody={site.pageBody}/>
     </div>
   );
 }
