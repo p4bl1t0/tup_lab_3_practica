@@ -1,22 +1,19 @@
 import React from "react";
 import Body from "./Body";
 
-const Main = ({ body }) => {
+const Main = ({ body, react, practica }) => {
   return (
     <div>
       <Body body={body} />
       <nav>
         <ul>
           <li>
-            <a
-              href="https://github.com/BaltazarG/tup_lab_3_practica/tree/main/unidad_1_2"
-              target="blank"
-            >
+            <a href={practica} target="blank">
               Practica
             </a>
           </li>
           <li>
-            <a href="https://es.reactjs.org/" target="blank">
+            <a href={react} target="blank">
               React JS
             </a>
           </li>
