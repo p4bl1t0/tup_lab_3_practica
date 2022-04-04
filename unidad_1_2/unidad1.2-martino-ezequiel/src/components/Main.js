@@ -5,6 +5,7 @@ const Main = ({ pageBody, link1, link2 }) => {
   return (
     <div>
       <nav>
+        <p>Estos links son re facheros B-)</p>
         <ul>
           <li>
             <a href={link1}> Link1 </a>
