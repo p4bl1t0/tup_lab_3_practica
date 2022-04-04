@@ -1,5 +1,7 @@
 import "./App.css";
 import Page from "./components/Page.js";
+import Header from "./components/Header.js";
+import Main from "./components/Main.js";
 
 function App() {
   const site = {
@@ -8,7 +10,10 @@ function App() {
   };
   return (
     <div className="App">
-      <Page pageTitle={site.pageTitle} pageBody={site.pageBody}></Page>
+      <Page>
+        <Header pageTitle={site.pageTitle} />
+        <Main pageBody={site.pageBody} />
+      </Page>
     </div>
   );
 }
