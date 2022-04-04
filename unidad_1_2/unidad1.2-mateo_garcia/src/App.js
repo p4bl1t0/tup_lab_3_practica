@@ -1,23 +1,21 @@
 import "./App.css";
-import Title from "./components/Title.js";
-import Body from "./components/Body.js";
+import Header from "./components/Header.js";
+import Main from "./components/Main.js";
 
-const App = () => {
+const App = ({ pageHeader }, { pageMain }) => {
   const site = {
     pageTitle: "Unidad 1.2 - Práctica",
     pageBody: "Implementación de árbol de componentes y propiedades en React.",
   };
-
   return (
     <div>
       <div>
-      <Title pageTitle={site.pageTitle}/>
+        <Header Header={pageHeader} />
       </div>
       <div>
-      <Body pageBody={site.pageBody}/>
+        <Main Main={pageMain} />
       </div>
     </div>
-
   );
 };
 
