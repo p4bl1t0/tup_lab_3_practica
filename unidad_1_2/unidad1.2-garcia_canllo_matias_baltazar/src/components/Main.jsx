@@ -15,6 +15,11 @@ const Main = ({ body }) => {
               Practica
             </a>
           </li>
+          <li>
+            <a href="https://es.reactjs.org/" target="blank">
+              React JS
+            </a>
+          </li>
         </ul>
       </nav>
       <h3>Gracias javascript</h3>
