@@ -1,8 +1,9 @@
 
 import './App.css';
+
 import Header from './components/Header';
 import Main from './components/Main';
-
+import Page from './components/Page';
 
 const App = () => {
   
@@ -18,11 +19,12 @@ const App = () => {
   
   return (
     <div>
-      <Header pageTitle={site.pageTitle} />
-      <Main pageBody={site.pageBody}
-            link1 = {links.link1} 
-            link2 = {links.link2} />
-     
+      <Page className="page">
+        <Header pageTitle={site.pageTitle} />
+        <Main pageBody={site.pageBody}
+              link1 = {links.link1} 
+              link2 = {links.link2} />
+      </Page>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import Title from './title'
 
 const Header = ({pageTitle}) => {
   return (
-    <div>
+    <div className='header-page'>
         <Title pageTitle={pageTitle} />
     </div>
   );
