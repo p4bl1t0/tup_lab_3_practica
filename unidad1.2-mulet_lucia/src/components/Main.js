@@ -14,8 +14,9 @@ const Main = ({ pageBody, link1, link2 }) => {
           </li>
         </ul>
       </nav>
+      <Body pageBody={pageBody} />
       <div>
-        <Body pageBody={pageBody} />
+        <p> Aprendiendo a usar React </p>
       </div>
     </div>
   );
