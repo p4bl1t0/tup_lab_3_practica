@@ -5,6 +5,9 @@ const Main = ({ pageBody, extLinks }) => {
   return (
     <div>
       <Body pageBody={pageBody} />
+      <div>
+        <p>Algunos links referentes a LabComIII:</p>
+      </div>
       <nav>
         <ul>
           <li>

@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import Page from "./components/Page";
 
 const App = () => {
   const site = {
@@ -12,10 +13,10 @@ const App = () => {
     ],
   };
   return (
-    <div>
+    <Page>
       <Header pageTitle={site.pageTitle} />
       <Main pageBody={site.pageBody} extLinks={site.extLinks} />
-    </div>
+    </Page>
   );
 };
 
