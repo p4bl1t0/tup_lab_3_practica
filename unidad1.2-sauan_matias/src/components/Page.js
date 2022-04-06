@@ -5,7 +5,6 @@ const Page = ({ children}) => {
   return (
     <div className="page-class">
         {children}
-        <p>esta es una frase de prueba :P</p>
     </div>
   );
 };

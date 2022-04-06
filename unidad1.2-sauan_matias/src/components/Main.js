@@ -8,6 +8,7 @@ const Main = ({ body, firstLink, secondLink }) => {
       <navbar>
         <ul><a href="https://www.google.com/">{firstLink}</a></ul>
         <ul><a href="https://twitter.com/home">{secondLink}</a></ul>
+        <p>esta es una frase de prueba :P</p>
       </navbar>
     </div>
   );
