@@ -1,11 +1,8 @@
-import Title from "./components/Title.js";
 import "./components/Header.css";
 
-const Header = () => {
-    const site = {
-        pageTitle: "Unidad 1.2 - Práctica",
-        pageBody: "Implementación de árbol de componentes y propiedades en React.",
-      };
+import Title from "./components/Title.js";
+
+const Header = ({ pageTitle }) => {
   return (
     <div>
       <div className="navBar-container">
@@ -20,7 +17,7 @@ const Header = () => {
       </div>
       <hr></hr>
       <div className="Title-container">
-        <Title pageHeader={site.pageTitle} />
+        <Title pageTitle={pageTitle} />
       </div>
     </div>
   );

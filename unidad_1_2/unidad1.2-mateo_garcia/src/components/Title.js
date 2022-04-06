@@ -1,5 +1,3 @@
-import "./App.js";
-
 const Title = ({ pageTitle }) => {
   return (
     <div className="Title-container">

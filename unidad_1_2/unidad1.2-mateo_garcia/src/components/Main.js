@@ -1,13 +1,9 @@
 import Body from "./components/Body.js";
 
-const Main = () => {
-    const site = {
-        pageTitle: "Unidad 1.2 - Práctica",
-        pageBody: "Implementación de árbol de componentes y propiedades en React.",
-      };
+const Main = ({ pageBody }) => {
   return (
     <div>
-      <Body pageMain={site.pageBody} />
+      <Body pageBody={pageBody} />
     </div>
   );
 };
