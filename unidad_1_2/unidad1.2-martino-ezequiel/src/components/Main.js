@@ -1,5 +1,8 @@
 import React from "react";
+import BlogPost from "./BlogPost";
 import Body from "./Body";
+
+import "./Main.css"
 
 const Main = ({ body, links }) => {
   return (
@@ -15,8 +18,13 @@ const Main = ({ body, links }) => {
           </li>
         </ul>
       </nav>
+      <div className="pageBody">
+        <Body body={body} />
+      </div>
       <div>
-        <Body pageBody={body} />
+        <BlogPost body="Lo anunció el ministro de Salud bonaerense Nicolás Kreplak. También incluye lugares recreativos pero sigue para el transporte público."
+        title="Desde este jueves, no será obligatorio el barbijo en escuelas ni trabajos en la Provincia de Buenos Aires"
+        />
       </div>
     </div>
   );
