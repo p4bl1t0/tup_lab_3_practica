@@ -1,6 +1,6 @@
-import "./components/Header.css";
+import "./Header.css";
 
-import Title from "./components/Title.js";
+import Title from "./Title.js";
 
 const Header = ({ pageTitle }) => {
   return (

@@ -1,9 +1,19 @@
-import Body from "./components/Body.js";
+import Body from "./Body.js";
 
-const Main = ({ pageBody }) => {
+const Main = ({ pageBody, links }) => {
   return (
     <div>
-      <Body pageBody={pageBody} />
+      <div>
+        <navbar>
+          <ul>
+            <a href={links.github} target="_blank">Github</a>
+          </ul>
+          <ul>
+            <a href={links.linkedin} target="_blank">Linkedin</a>
+          </ul>
+        </navbar>
+      </div>
+      <Body pageBody={pageBody + "Referencia Bonus"} />
     </div>
   );
 };

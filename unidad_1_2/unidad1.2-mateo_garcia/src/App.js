@@ -8,6 +8,10 @@ const App = () => {
     pageTitle: "Unidad 1.2 - Práctica",
     pageBody: "Implementación de árbol de componentes y propiedades en React.",
   };
+  const links = {
+    github: "https://github.com/mateogd012",
+    linkedin: "https://www.linkedin.com/in/mateo-garcia-758aa1211/",
+  };
   return (
     <div>
       <Page>
@@ -15,7 +19,10 @@ const App = () => {
           <Header pageTitle={site.pageTitle} />
         </div>
         <div>
-          <Main pageBody={site.pageBody} />
+          <Main 
+            pageBody={site.pageBody}
+            links={links}
+          />
         </div>
       </Page>
     </div>
