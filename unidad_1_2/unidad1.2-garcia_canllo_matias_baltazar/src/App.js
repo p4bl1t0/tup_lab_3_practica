@@ -12,10 +12,16 @@ function App() {
     react: "https://es.reactjs.org/",
   };
   return (
-    <Page>
-      <Header title={site.pageTitle} />
-      <Main body={site.pageBody} react={site.react} practica={site.practica} />
-    </Page>
+    <>
+      <Page>
+        <Header title={site.pageTitle} />
+        <Main
+          body={site.pageBody}
+          react={site.react}
+          practica={site.practica}
+        />
+      </Page>
+    </>
   );
 }
 
