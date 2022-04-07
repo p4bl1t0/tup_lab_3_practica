@@ -1,5 +1,7 @@
 import React from "react";
 import Body from "./Body";
+import BlogPost from "./BlogPost";
+import "./Style.css";
 
 const Main = ({ pageBody, enlace1, enlace2, children }) => {
   return (
@@ -18,7 +20,9 @@ const Main = ({ pageBody, enlace1, enlace2, children }) => {
           </li>
         </ul>
       </nav>
-      <Body body={pageBody} />
+      <Body className="italic fondo-pintado" body={pageBody} />
+
+      <BlogPost />
       <p>{children}</p>
     </div>
   );
