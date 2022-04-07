@@ -14,8 +14,8 @@ function App() {
   return (
     <div className="App">
       <Page>
-        <Header pageTitle={site.pageTitle} />
-        <Main pageBody={site.pageBody} links={site.links} />
+        <Header title={site.pageTitle} />
+        <Main body={site.pageBody} links={site.links} />
       </Page>
     </div>
   );

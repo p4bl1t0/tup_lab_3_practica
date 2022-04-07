@@ -1,22 +1,22 @@
 import React from "react";
 import Body from "./Body";
 
-const Main = ({ pageBody, links }) => {
+const Main = ({ body, links }) => {
   return (
     <div>
       <nav>
         <p>Estos links son re facheros B-)</p>
         <ul>
           <li>
-            <a href={links[0]}>Facebook</a>
+            <a href={links[0]}>{links[0]}</a>
           </li>
           <li>
-            <a href={links[1]}>Amazon</a>
+            <a href={links[1]}>{links[1]}</a>
           </li>
         </ul>
       </nav>
       <div>
-        <Body pageBody={pageBody} />
+        <Body pageBody={body} />
       </div>
     </div>
   );
