@@ -1,7 +1,11 @@
 import React from "react";
 
-const Body = ({ pBody }) => {
-  return <div>{pBody}</div>;
+const Body = ({ body }) => {
+  return (
+    <div>
+      <p>{body}</p>
+    </div>
+  );
 };
 
 export default Body;

@@ -12,9 +12,9 @@ function App() {
   return (
     <div className="App">
       <Page>
-        <Header title={site.pageTitle} />
+        <Header pageTitle={site.pageTitle} />
         <Main
-          body={site.pageBody}
+          pageBody={site.pageBody}
           link1={site.links[0]}
           link2={site.links[1]}
         />
