@@ -1,14 +1,23 @@
-import Body from './Body';
+import './Main.css';
 
-const Main = ({pageBody, links}) => {
+import Body from './Body';
+import BlogPost from './BlogPost';
+
+const Main = ({body, links}) => {
     return (
         <div>
-            <Body pageBody={pageBody}/>
-            <navbar>
-                <ul><a href={links.google}>Google</a></ul>
-                <ul><a href={links.facebook}>Facebook</a></ul>
+            <div className = "mainBody">
+              <Body body={body} />
+            </div>
+
+            <navbar >
+                <ul className="links"><a href={links.google}>Google</a></ul>
+                <ul className="links"><a href={links.facebook}>Facebook</a></ul>
             </navbar>
+
             <h3>El agua hace flotar el barco, pero tambien puede hundirlo.</h3>
+
+            <BlogPost/>
         </div>
     )
 };

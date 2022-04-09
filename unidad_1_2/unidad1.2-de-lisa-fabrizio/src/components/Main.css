@@ -1,0 +1,14 @@
+*{
+    padding: 5px;
+}
+
+.mainBody {
+    font-style:italic ;
+}
+
+.links {
+    background-color: #2cbad3;
+    padding: 15px 32px;
+    font-size: 30px;
+    width: 120px;
+  }

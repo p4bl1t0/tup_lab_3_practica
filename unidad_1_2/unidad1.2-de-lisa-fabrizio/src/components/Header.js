@@ -1,10 +1,12 @@
+import './Header.css';
+
 import Title from "./Title";
 
- const Header = ({pageTitle}) => {
+ const Header = ({title}) => {
 
     return (
-    <div>
-        <Title pageTitle={pageTitle}/>
+    <div class = "titleNotice">
+        <Title  title={title}/>
     </div>
     )
 };

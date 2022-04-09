@@ -2,6 +2,7 @@ import './App.css';
 
 import Header from './components/Header';
 import Main from './components/Main';
+import Page from './components/Page';
 
 
 const App = () => {
@@ -17,8 +18,10 @@ const App = () => {
 
   return (
     <div>
-      <Header pageTitle = {site.pageTitle} />
-      <Main pageBody= {site.pageBody} links = {links} />
+      <Page>
+        <Header title = {site.pageTitle} />
+        <Main body= {site.pageBody} links = {links} />
+      </Page>
     </div>
   ); 
 }
