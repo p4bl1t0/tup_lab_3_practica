@@ -13,8 +13,8 @@ function App() {
   };
   return (
     <Page>
-      <Header pageTitle={site.pageTitle} />
-      <Main pageBody={site.pageBody} practica={site.practica} js={site.js} />
+      <Header title={site.pageTitle} />
+      <Main body={site.pageBody} practica={site.practica} js={site.js} />
     </Page>
   );
 }
