@@ -1,9 +1,14 @@
+import "./styles.css";
+import BlogPost from "./BlogPost";
 import Body from "./Body";
 
 const Main = ({ pageBody, links }) => {
   return (
     <div>
-      <Body pageBody={pageBody} />
+      <div className="text-style">
+        <Body body={pageBody} />
+      </div>
+      <BlogPost />
       <nav>
         <ul>
           <li>
@@ -13,8 +18,8 @@ const Main = ({ pageBody, links }) => {
             <a href={links[1].url}>{links[1].name}</a>
           </li>
         </ul>
+        <p>Realizada Tarea 3</p>
       </nav>
-      <p>Realizada Tarea 3</p>
     </div>
   );
 };
