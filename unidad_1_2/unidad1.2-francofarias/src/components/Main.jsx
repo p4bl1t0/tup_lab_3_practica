@@ -1,9 +1,9 @@
-import React from 'react'
-
-const Main = ({body, youtube, google}) => {
+import BlogPost from "./BlogPost"
+import Body from "./Body"
+const Main = ({body, youtube, google, estilo}) => {
   return (
     <div>
-        <p>{body}</p>
+        <Body body={body.toUpperCase()} estilo={"italic"} />
         <nav>
           <ul>
             <li>
@@ -15,6 +15,8 @@ const Main = ({body, youtube, google}) => {
           </ul>
         </nav>
         <p>Programador en curso...</p>
+        <hr />
+        <BlogPost />
     </div>
   )
 }

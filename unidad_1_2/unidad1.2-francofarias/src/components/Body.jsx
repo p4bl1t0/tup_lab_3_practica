@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Body = ({body}) => {
+const Body = ({body, estilo}) => {
   return (
-    <div>
-        {body}
+    <div
+    style={{
+      fontStyle: estilo,
+    }}
+    >
+      {body}
     </div>
   )
 }

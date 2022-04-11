@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css'
+import BlogPost from './components/BlogPost';
 import Header from './components/Header';
 import Main from './components/Main';
 import Page from './components/Page';
+//import BlogPost from './BlogPost'
 
 function App() {
 
@@ -10,7 +12,7 @@ function App() {
     pageTitle: 'Unidad 1.2 - Práctica',
     pageBody: 'Implementación de árbol de componentes y propiedades en React.',
     youtube:'https://www.youtube.com/',
-    google: 'https://www.google.com/'
+    google: 'https://www.google.com/',
   }
 
   return (

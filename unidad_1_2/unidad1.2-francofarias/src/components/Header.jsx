@@ -1,9 +1,10 @@
 import React from 'react'
+import Title from './Title'
 
 const Header = ({title}) => {
   return (
     <div>
-        <h1>{title}</h1>
+      <Title title={title.toUpperCase()}/>
     </div>
   )
 }
