@@ -1,11 +1,15 @@
 import React from 'react'
-import Body from './body'
+import BlogPost from './BlogPost'
+import Body from './Body'
+
+import './Main.css'
 
 const Main = ({pageBody, link1, link2}) => {
   
   return (
     <div className='main-page'>
-       <Body pageBody={pageBody}/>
+      <Body pageBody={pageBody} />
+      <BlogPost/>
         <nav>
             <ul>
                 <li>

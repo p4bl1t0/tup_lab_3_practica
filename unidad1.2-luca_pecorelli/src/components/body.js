@@ -1,9 +1,7 @@
 
-//import "./body.css" podría ser necesario crearlo
-
-const Body = ({pageBody}) => {
+const Body = ({body}) => {
     return (
-    <div>{pageBody}</div>
+    <div className="body-main">{body}</div>
     );
   }
   

@@ -1,12 +1,12 @@
 
 //import "./title.css" podría ser necesario crearlo
 
-const Title = ({pageTitle}) => {
+const title = ({title}) => {
   return (
-    <div>
-        <h1>{pageTitle}</h1>
+    <div className="blogspot-title">
+        <h1>{title}</h1>
     </div>
   )
 }
 
-export default Title
+export default title

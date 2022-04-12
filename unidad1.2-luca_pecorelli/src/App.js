@@ -20,8 +20,8 @@ const App = () => {
   return (
     <div>
       <Page className="page">
-        <Header pageTitle={site.pageTitle} />
-        <Main pageBody={site.pageBody}
+        <Header title={site.pageTitle} />
+        <Main body={site.pageBody}
               link1 = {links.link1} 
               link2 = {links.link2} />
       </Page>

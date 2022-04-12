@@ -1,10 +1,10 @@
 import React from 'react'
-import Title from './title'
+import Title from './Title'
 
-const Header = ({pageTitle}) => {
+const Header = ({title}) => {
   return (
     <div className='header-page'>
-        <Title pageTitle={pageTitle} />
+        <Title title={title.toUpperCase()} />
     </div>
   );
 }
