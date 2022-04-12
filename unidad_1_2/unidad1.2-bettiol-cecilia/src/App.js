@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Page from "./components/Page";
 
+
 const App = () => {
   const site = {
     pageTitle: "Unidad 1.2 - Práctica",

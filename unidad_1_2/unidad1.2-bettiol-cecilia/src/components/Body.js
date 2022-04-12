@@ -1,7 +1,9 @@
-const Body = ( {pageBody} ) => {
+import './Body.css'
+
+const Body = ( { body } ) => {
     return (
-      <div>
-          <h1>{ pageBody }</h1>
+      <div className="body-main">
+          <h1>{ body }</h1>
       </div>
     )
   }

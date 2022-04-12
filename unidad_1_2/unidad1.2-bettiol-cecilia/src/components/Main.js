@@ -1,11 +1,14 @@
+import BlogPost from "./BlogPost";
 import Body from "./Body";
+
 
 const Main = ({ pageBody, link1, link2 }) => {
   return (
     <div>
-      <Body pageBody = {pageBody}/>
+      <Body pageBody={pageBody} />
+      <BlogPost />
       <nav>
-      <p></p>Sitios de interés:
+        <p></p>Sitios de interés:
         <ul>
           <li>
             <a href={link1} target="_blank" rel="noreferrer">
