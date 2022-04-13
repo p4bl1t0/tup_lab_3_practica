@@ -5,8 +5,8 @@ import Page from "./components/Page";
 
 const App = () => {
   const site = {
-    pageTitle: "Unidad 1.2 - Práctica",
-    pageBody: "Implementación de árbol de componentes y propiedades en React.",
+    title: "Unidad 1.2 - Práctica",
+    body: "Implementación de árbol de componentes y propiedades en React.",
   };
   const links = {
     github: "https://github.com/mateogd012",
@@ -16,11 +16,11 @@ const App = () => {
     <div>
       <Page>
         <div>
-          <Header pageTitle={site.pageTitle} />
+          <Header title={site.title} />
         </div>
         <div>
           <Main 
-            pageBody={site.pageBody}
+            body={site.body}
             links={links}
           />
         </div>

@@ -1,6 +1,6 @@
 import Body from "./Body.js";
 
-const Main = ({ pageBody, links }) => {
+const Main = ({ body, links }) => {
   return (
     <div>
       <div>
@@ -13,7 +13,7 @@ const Main = ({ pageBody, links }) => {
           </ul>
         </navbar>
       </div>
-      <Body pageBody={pageBody + "Referencia Bonus"} />
+      <Body body={body + " Bonus reference"} />
     </div>
   );
 };
