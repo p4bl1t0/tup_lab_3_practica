@@ -1,9 +1,11 @@
 import React from "react";
+import BlogPost from "./BlogPost";
+import Body from "./Body";
 
-const Main = ({ body, github, linkedin, sentence }) => {
+const Main = ({ body, github, linkedin, sentence, estilo }) => {
   return (
     <div>
-      {body}
+      <Body body={body.toUpperCase()} estilo={"italic"} />
       <nav>
         <ul>
           <li>
@@ -17,10 +19,11 @@ const Main = ({ body, github, linkedin, sentence }) => {
         </ul>
         <ul>
           <li>
-            <p>{sentence}</p>
+            <p style={{ color: estilo }}>{sentence}</p>
           </li>
         </ul>
       </nav>
+      <BlogPost />
     </div>
   );
 };

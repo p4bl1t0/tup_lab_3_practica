@@ -1,7 +1,15 @@
 import React from "react";
 
-const Body = ({ body }) => {
-  return <div>{body}</div>;
+const Body = ({ body, estilo }) => {
+  return (
+    <div
+      style={{
+        fontStyle: estilo,
+      }}
+    >
+      {body}
+    </div>
+  );
 };
 
 export default Body;
