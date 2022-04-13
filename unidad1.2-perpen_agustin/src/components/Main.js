@@ -1,15 +1,26 @@
-import Body from './Body'
 import React from 'react';
+import BlogPost from './BlogPost';
+import Body from './Body';
+import Title from './Title';
+import "./Main.css"
 
-const Main = ({pageBody, siteOne, siteTwo}) => {
+const Main = ({ siteOne, siteTwo, title, body, titleNews, bodyNews}) => {
   return (    
       <div>
-        <Body pageBody={pageBody}/>
-        <ul>
-            <li>{siteOne}</li>
-            <li>{siteTwo}</li>
-        </ul>
-        <p>No sos vos soy yo</p>
+        <div className='main'>         
+          <Title title={title}/>
+          <i>
+            <Body body={body}/>
+          </i>
+          <ul>
+              <li>{siteOne}</li>
+              <li>{siteTwo}</li>
+          </ul>
+          <p>No sos vos soy yo</p>
+        </div>
+        <div>
+          <BlogPost title={titleNews} body={bodyNews}/>
+        </div>
       </div>      
   )
 }

@@ -1,10 +1,12 @@
 import Title from './Title';
 import React from 'react';
 
-const Header = ({pageTitle}) => {
+
+const Header = ({title}) => {
   return (
     <div>
-      <Title pageTitle={pageTitle}/>
+      <Title title={title}/>
+      <Title titleNews={titleNews}/>
     </div>    
   )
 }
