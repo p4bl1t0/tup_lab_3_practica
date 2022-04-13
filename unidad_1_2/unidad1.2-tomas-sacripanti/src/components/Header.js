@@ -4,7 +4,7 @@ import Title from "./Title.js";
 const Header = ({ pageTitle }) => {
   return (
     <div>
-      <Title pageTitle={pageTitle}></Title>
+      <Title title={pageTitle}></Title>
     </div>
   );
 };
