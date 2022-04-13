@@ -1,9 +1,9 @@
 import React from 'react';
-
+import "./Body.css";
 
 const Body = ({ body }) => {
   return (
-    <div>{body}</div>
+    <div className='body-page'>{body}</div>
   );
 };
 
