@@ -1,0 +1,31 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navegation {
+  width: 100%;
+}
+
+.navegation > ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.navegation > ul > li {
+  margin: 0 10px;
+}
+.navegation > ul > li > a {
+  color: rgb(72, 70, 70);
+}
+.navegation > ul > li > a:hover {
+  color: rgb(33, 32, 32);
+  cursor: pointer;
+}
+
+.phrase {
+  width: 75%;
+}
