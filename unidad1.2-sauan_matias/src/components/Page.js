@@ -1,4 +1,5 @@
 import React from "react";
+import "./Page.css";
 
 const Page = ({ children}) => {
   console.log(children);
