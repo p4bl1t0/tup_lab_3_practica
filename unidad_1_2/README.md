@@ -50,12 +50,18 @@ const site = {
 
 ### Tarea 3
 
+* Crear un componente `Page` de forma que acepte hijos (children) y los renderice de esa forma a los componente `Main` y `Header`
+* Refactorizar `App` para que importe y renderice `Page`, recordar enviarle que la constante site debe estar definida en `App` y enviarla a los distintos componentes via `props`.
+* En el componente `Main` modificar el contenido de la página agregando una frase a elección del alumno.
 
 
+<<<<<<< HEAD
 * Crear un componente `Page` de forma que acepte hijos (children) y los renderice de esa forma a `Main` y `Header`
 * Refactorizar `App` para que importe y renderice `Page`, recordar enviarle que la constante site debe estar definida en `App` y enviarla a los distintos componentes via `props`.
 * En el componente `Main` modificar el contenido de la página agregando una frase a elección del alumno.
 
+=======
+>>>>>>> e2457ec3db1d408f5849700ef82927c5d42de70b
 ### Tarea 4 - Reutilización de componentes
 
 * Refactorizar las propiedades `pageTitle` y `pageBody` de `Title` y `Body` respectivamente para que llamen `title` y `body`
