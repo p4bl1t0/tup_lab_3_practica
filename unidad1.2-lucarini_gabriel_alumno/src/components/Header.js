@@ -1,9 +1,9 @@
 import Title from "./Title.js";
 
-const Header = ({ pageTitle }) => {
+const Header = ({ title }) => {
     return (
         <header>
-          <Title pageTitle={pageTitle}/>
+          <Title title={title.toUpperCase()}/>
         </header>
       );
 };

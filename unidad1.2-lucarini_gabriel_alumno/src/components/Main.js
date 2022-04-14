@@ -1,6 +1,7 @@
 import Body from "./Body.js";
+import "./p.css"
 
-const Main = ({ li1, li2, pageBody }) => {
+const Main = ({ li1, li2, body}) => {
     return (
     <div>
         <nav>
@@ -9,8 +10,8 @@ const Main = ({ li1, li2, pageBody }) => {
                 <li><a href={li2}>Infobae</a></li>
             </ul>
         </nav>
-        <Body pageBody={pageBody}/>
-        <p>Nadie tiene éxito sin esfuerzo. Aquellos que tienen éxito
+        <Body body={body.toUpperCase()}/>
+        <p className="p-css">Nadie tiene éxito sin esfuerzo. Aquellos que tienen éxito
              se lo deben a la perseverancia (Ramana Maharshi)</p>
         </div>
       );

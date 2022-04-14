@@ -1,14 +1,14 @@
 import Header from "./Header.js";
 import Main from "./Main.js";
 
-const Page = ({ pageTitle, pageBody }) => {
+const Page = ({ title, body}) => {
   return (
     <div>
-      <Header pageTitle={pageTitle}></Header>
+      <Header title={title}></Header>
       <Main
         li1="https://www.google.com.ar"
         li2="https://www.infobae.com"
-        pageBody={pageBody}
+        body={body}
       />
     </div>
   );

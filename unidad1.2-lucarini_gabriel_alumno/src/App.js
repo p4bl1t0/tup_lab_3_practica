@@ -1,9 +1,10 @@
 import './App.css';
+import BlogSpot from './components/BlogSpot';
 import Page from "./components/Page";
 
 const site = {
   pageTitle: 'Unidad 1.2 - Práctica',
-  pageBody: 'Implementación de árbol de componentes y propiedades en React.'
+  pageBody: 'Implementación de árbol de componentes y propiedades en React.',
 }
 
 
@@ -11,7 +12,8 @@ function App() {
 
   return (
     <div>
-      <Page pageTitle={site.pageTitle} pageBody={site.pageBody}></Page>
+      <Page title={site.pageTitle} body={site.pageBody}/>
+      <BlogSpot/>
     </div>
   );
 }
