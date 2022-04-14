@@ -12,8 +12,12 @@ function App() {
 
   return (
     <div>
+<<<<<<< HEAD
       <Page title={site.pageTitle} body={site.pageBody}/>
       <BlogSpot/>
+=======
+      <Page pageTitle={site.pageTitle} pageBody={site.pageBody}/>
+>>>>>>> fa58da1d827e89a8c9c4a69281ab9369c9d6b3f4
     </div>
   );
 }
