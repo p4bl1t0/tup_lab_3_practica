@@ -1,11 +1,11 @@
 import React from "react";
 import BlogPost from "./BlogPost";
 import Body from "./Body";
+
 const Main = ({ body, react, practica }) => {
   return (
     <div>
       <Body body={body.toUpperCase()} estilo="italic" />
-      <BlogPost />
       <nav>
         <ul>
           <li>
@@ -21,6 +21,7 @@ const Main = ({ body, react, practica }) => {
         </ul>
       </nav>
       <h3>Gracias javascript</h3>
+      <BlogPost />
     </div>
   );
 };
