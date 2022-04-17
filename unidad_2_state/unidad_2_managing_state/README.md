@@ -18,10 +18,11 @@ Considerando el JSX brindado en `App.js`
 
 
 ### Tarea 2
-- Capturar el valor del `checkbox` en un estado de React si el input está seleccionado guardar 1 sino guardar 0.
+- Capturar el valor del `checkbox` en un estado de React. si el input está seleccionado guardar 1 sino guardar 0.
 - Completar los valores posibles del `select` para elegir algunas de las compuertas lógicas (or, and, nand, nor y xor). Ver: https://en.wikipedia.org/wiki/Logic_gate
 
 
 ### Tarea 3
-- Capturar el evento de cambio del contenido del `select` y mostrar el resultado de aplicar la puerta lógica seleccionada al valor del estado de `input1` y el de `checkboc` de  en el espacio reservado para tar fin
+- Capturar el evento de cambio del contenido del `select` y mostrar el resultado de aplicar la puerta lógica seleccionada al valor del estado de `input1` y el de `checkbox` de  en el espacio reservado para tal fin
+
 - Bonus: Refactorizar la selección y el cálculo de la compuerta lógica como un componente.
