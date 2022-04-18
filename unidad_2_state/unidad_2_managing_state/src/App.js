@@ -17,7 +17,6 @@ const App = () => {
     //let checkBoxValue;
     setChecked(!checked);
   };
-  //------
   const [selectInput, setSelectInput] = useState("or");
 
   const handleSelect = (e) => {
@@ -52,7 +51,6 @@ const App = () => {
         return "something went wrong";
     }
   };
-  //------
   return (
     <div className="App">
       <div>
