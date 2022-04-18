@@ -1,6 +1,6 @@
 import './App.css';
 import BlogSpot from './components/BlogSpot';
-import Page from "./components/Page";
+import Main from "./components/Main";
 
 const site = {
   pageTitle: 'Unidad 1.2 - Práctica',
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div>
-      <Page title={site.pageTitle} body={site.pageBody}/>
+      <Main title={site.pageTitle} body={site.pageBody}/>
       <BlogSpot/>
     </div>
   );
