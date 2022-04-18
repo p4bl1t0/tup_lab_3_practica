@@ -1,7 +1,8 @@
+import { useState } from "react";
+
 import "./App.css";
 
 import LogicGates from "./components/LogicGates";
-import { useState } from "react";
 
 function App() {
   const [newInput, setNewInput] = useState(0);
@@ -25,6 +26,7 @@ function App() {
       <div>
         <label for="input1">Entrada 1:</label>
         <input
+          value={newInput}
           type="number"
           id="input1"
           min="0"
