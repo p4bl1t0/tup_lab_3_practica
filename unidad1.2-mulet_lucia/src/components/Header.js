@@ -6,6 +6,8 @@ const Header = ({ pageTitle }) => {
     <div>
       <h1>
         <Title pageTitle={pageTitle} />
+        <Title title={title} />
+        <Title titleNews={titleNews} />
       </h1>
     </div>
   );
