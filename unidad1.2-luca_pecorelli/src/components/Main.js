@@ -2,14 +2,14 @@ import React from 'react'
 import BlogPost from './BlogPost'
 import Body from './Body'
 
+
 import './Main.css'
 
-const Main = ({pageBody, link1, link2}) => {
+const Main = ({body, link1, link2}) => {
   
   return (
     <div className='main-page'>
-      <Body pageBody={pageBody} />
-      <BlogPost/>
+      <Body body={body} />
         <nav>
             <ul>
                 <li>
@@ -19,8 +19,9 @@ const Main = ({pageBody, link1, link2}) => {
                 < a href={link2} target="_blank" rel='noreferrer'>Mozilla Dev Resources</a>
                 </li>
             </ul>
+            <p>Veni Vidi Vici</p>
         </nav>
-        <p>Veni Vidi Vici</p>
+        <BlogPost/>
     </div>
   )
 }

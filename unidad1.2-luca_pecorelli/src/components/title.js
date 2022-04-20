@@ -3,7 +3,7 @@
 
 const title = ({title}) => {
   return (
-    <div className="blogspot-title">
+    <div>
         <h1>{title}</h1>
     </div>
   )

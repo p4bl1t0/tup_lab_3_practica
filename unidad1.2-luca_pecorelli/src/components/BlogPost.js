@@ -1,7 +1,7 @@
 import Body from "./Body"
 import Title from "./Title"
 
-import './BlogPost.css '
+import './BlogPost.css'
 
 const BlogPost = ({ title, body}) => {
   return (
