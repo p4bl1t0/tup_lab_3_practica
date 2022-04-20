@@ -23,5 +23,5 @@ Considerando el JSX brindado en `App.js`
 
 
 ### Tarea 3
-- Capturar el evento de cambio del contenido del `select` y mostrar el resultado de aplicar la puerta lógica seleccionada al valor del estado de `input1` y el de `checkboc` de  en el espacio reservado para tar fin
+- Capturar el evento de cambio del contenido del `select` y mostrar el resultado de aplicar la puerta lógica seleccionada al valor del estado de `input1` y el de `checkbox` de  en el espacio reservado para tar fin
 - Bonus: Refactorizar la selección y el cálculo de la compuerta lógica como un componente.
