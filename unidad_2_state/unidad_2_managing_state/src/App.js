@@ -40,7 +40,7 @@ function App() {
         </label>
       </div>
       <div>
-        <LogicGates newInput={newInput} checkboxInput={checkboxInput} />
+        <LogicGates inputA={newInput} inputB={checkboxInput} />
       </div>
     </div>
   );

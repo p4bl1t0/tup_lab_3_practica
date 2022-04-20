@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const LogicGates = ({ newInput, checkboxInput }) => {
+const LogicGates = ({ inputA, inputB }) => {
   const [selectInput, setSelectInput] = useState("");
   const selectChangeHandler = (e) => {
     setSelectInput(e.target.value);
@@ -36,9 +36,7 @@ const LogicGates = ({ newInput, checkboxInput }) => {
         <option value="xor">XOR</option>
       </select>
       <div>
-        <span>
-          Salida: {calculateResult(selectInput, newInput, checkboxInput)}
-        </span>
+        <span>Salida: {calculateResult(selectInput, inputA, inputB)}</span>
       </div>
     </div>
   );
