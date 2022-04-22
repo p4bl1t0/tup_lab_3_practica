@@ -2,48 +2,63 @@ import { useState } from "react";
 
 import "./App.css";
 
+import InputComponent from "./components/InputComponent";
 import LogicGates from "./components/LogicGates";
 
-function App() {
+const App = () => {
   const [newInput, setNewInput] = useState(0);
   const [checkboxInput, setCheckboxInput] = useState(0);
 
-  const inputHandler = (e) => {
-    let inputValue = e.target.value;
-    if (inputValue <= 1 && inputValue >= 0) {
-      setNewInput(inputValue);
-    } else setNewInput(0);
-  };
-
-  const checkboxHandler = (e) => {
-    if (e.target.checked) {
-      setCheckboxInput(1);
-    } else setCheckboxInput(0);
-  };
+  const [rangeInput, setRangeInput] = useState(0);
+  const [radioInput, setRadioInput] = useState(0);
 
   return (
     <div className="App">
-      <div>
-        <label for="input1">Entrada 1:</label>
-        <input
-          value={newInput}
-          type="number"
-          id="input1"
-          min="0"
-          max="1"
-          onChange={inputHandler}
+      <div className="cmp-box">
+        <p>Caja 1</p>
+        <InputComponent
+          inputName="Entrada 1:"
+          inputId="number"
+          inputType="number"
+          input={newInput}
+          setInput={setNewInput}
         />
-      </div>
-      <div>
-        <label>
-          <input type="checkbox" onChange={checkboxHandler} /> Entrada 2
-        </label>
-      </div>
-      <div>
+        <InputComponent
+          inputName="Entrada 2"
+          inputId="checkbox"
+          inputType="checkbox"
+          input={checkboxInput}
+          setInput={setCheckboxInput}
+        />
         <LogicGates inputA={newInput} inputB={checkboxInput} />
+      </div>
+      <div className="cmp-box">
+        <p>Caja 2</p>
+        <InputComponent
+          inputName="InputRange"
+          inputId="range"
+          inputType="range"
+          input={rangeInput}
+          setInput={setRangeInput}
+        />
+        <InputComponent
+          inputName="1"
+          inputId="radio1"
+          inputType="radio"
+          input={radioInput}
+          setInput={setRadioInput}
+        />
+        <InputComponent
+          inputName="0"
+          inputId="radio1"
+          inputType="radio"
+          input={radioInput}
+          setInput={setRadioInput}
+        />
+        <LogicGates inputA={rangeInput} inputB={radioInput} />
       </div>
     </div>
   );
-}
+};
 
 export default App;
