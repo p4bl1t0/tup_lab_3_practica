@@ -24,18 +24,28 @@ function App() {
     setSelectValue(event.target.value);
   }
 
+  const [outPutValue, setOutPutValue] = useState('');
+  
+
   const calculateGate = () => {
     switch(selectValue){
       case "and":
-        return (input1 && checkBox);
+         setOutPutValue(input1 && checkBox == 1 ? 1 : 0);
+         break;
       case "or":
-        return
+         setOutPutValue(input1 || checkBox == 1 ? 1 : 0);
+         break;
       case "nand":
-        return
+         setOutPutValue(!(input1 && checkBox == 1 ? 1 : 0));
+         break;
       case "nor":
-        return
+         setOutPutValue(!(input1 || !checkBox == 1 ? 1: 0));
+         break;
       case "xor":
-        return
+         setOutPutValue(input1 !== checkBox == 1 ? 1: 0);
+         break;
+         default:
+           return "Intente de nuevo";
     }
   }
 
@@ -59,7 +69,8 @@ function App() {
         <option value={"xor"}>XOR</option>
         </select>
       </div>
-        <div><span>Salida: { /* aca iria el resultado*/ }</span></div>
+        <button onClick={calculateGate} >Realizar cálculo</button>
+        <div><span>Salida: { outPutValue }</span></div>
     </div>
   );
 }
