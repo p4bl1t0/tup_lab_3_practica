@@ -1,4 +1,4 @@
-const Select = ({ checked1, result, input1, setResult }) => {
+const LogicGates = ({ checked1, input1, setResult }) => {
   const handleChangeSelect = (e) => {
     if (e.target.value === "and") {
       input1 && checked1 ? setResult(1) : setResult(0);
@@ -32,4 +32,4 @@ const Select = ({ checked1, result, input1, setResult }) => {
   );
 };
 
-export default Select;
+export default LogicGates;
