@@ -17,7 +17,7 @@ import "./App.css";
 
 import { useState } from "react";
 
-import SelectGate from "./components/SelectGate";
+import SelectGate from "./components/LogicGates";
 
 function App() {
   const [inputValue, setInputValue] = useState("1");
