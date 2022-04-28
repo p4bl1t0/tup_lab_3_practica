@@ -8,8 +8,6 @@ const validate = (number) => {
 };
 
 const logic = (opt1, opt2, door) => {
-  opt1 = opt1 === "1";
-
   switch (door) {
     case "OR":
       if (opt1 || opt2) {

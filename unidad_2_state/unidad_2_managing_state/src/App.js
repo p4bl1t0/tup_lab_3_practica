@@ -1,10 +1,15 @@
 import "./App.css";
 import { useState } from "react";
 import { validate, randomNumber } from "./lib/functions";
-import Logic from "./Logic";
+import LogicGates from "./LogicGates";
+import LogicInput from "./LogicInput";
 
 function App() {
   const [inputValue, setInputValue] = useState(randomNumber());
+
+  const inputHandler = (value) => {
+    setInputValue(value === "1" ? 1 : 0);
+  };
 
   const [cbxInput, setCbxInput] = useState(false);
   const handleChange = () => {
@@ -14,21 +19,15 @@ function App() {
   return (
     <div className="App">
       <div>
-        <label for="input1">Entrada 1: </label>
-        <input
-          type="number"
-          id="input1"
-          value={inputValue}
-          onChange={(e) => setInputValue(validate(e.target.value))}
-        />
+        <LogicInput label="Entrada 1:" onChange={inputHandler} />
       </div>
       <div>
         <label>
           <input type="checkbox" checked={cbxInput} onChange={handleChange} />{" "}
-          Entrada 2{/* {cbxInput ? "1" : "0"} */}
+          Entrada 2
         </label>
       </div>
-      <Logic value1={inputValue} value2={cbxInput} />
+      <LogicGates value1={inputValue} value2={cbxInput} />
     </div>
   );
 }

@@ -26,7 +26,7 @@ const Logic = ({ value1, value2 }) => {
         </select>
       </div>
       <div>
-        <span>Salida: {logic(value1, value2, selectValue)}</span>
+        <span>Salida: {logic(value1 === "1", value2, selectValue)}</span>
       </div>
     </>
   );
