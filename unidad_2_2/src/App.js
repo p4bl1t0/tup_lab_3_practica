@@ -37,6 +37,8 @@ function App() {
   const removeHandler = (index) => {
     const newList = list.filter((x, i) => i !== index);
     setList(newList);
+    const newActiveClasses = activeClasses.filter((x, i) => i !== index);
+    setActiveClasses(newActiveClasses);
   };
 
   const cancelHandler = () => {
