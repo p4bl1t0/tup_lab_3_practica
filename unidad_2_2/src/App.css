@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+.container {
+  margin: 10px;
+}
+
+input {
+  text-align: center;
+  margin: 10px;
+}
+button {
+  margin: 10px;
+}
+span {
+  margin: 10px;
+}
+.selected {
+  background-color: brown;
+}
+.listItem {
+  margin: 2px;
+}
+
+.disable {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.no-display {
+  visibility: hidden;
+}
+
+.add {
+  width: 64px;
+}
+.helper {
+  display: inline-block;
+  width: 200px;
+}
