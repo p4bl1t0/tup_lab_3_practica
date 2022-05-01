@@ -10,6 +10,7 @@
 }
 .container {
   margin: 10px;
+  border-bottom: 3px solid black;
 }
 
 input {
@@ -27,6 +28,12 @@ span {
 }
 .listItem {
   margin: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+
+span {
+  margin: auto;
 }
 
 .disable {

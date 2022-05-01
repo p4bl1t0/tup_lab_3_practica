@@ -96,12 +96,14 @@ function App() {
             ) : (
               <input type="text" value={elem} />
             )}
-            <button type="button" onClick={() => removeHandler(i)}>
-              Borrar
-            </button>
-            <button type="button" onClick={() => editHandler(i)}>
-              Editar
-            </button>
+            <div>
+              <button type="button" onClick={() => removeHandler(i)}>
+                Borrar
+              </button>
+              <button type="button" onClick={() => editHandler(i)}>
+                Editar
+              </button>
+            </div>
           </div>
         ))}
       </div>
