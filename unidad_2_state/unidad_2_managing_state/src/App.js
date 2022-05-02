@@ -1,76 +1,62 @@
-import './App.css';
+import "./App.css";
 
-import './LogicGate';
+import { useState } from "react";
 
-import {useState} from "react";
+import LogicGate from "./LogicGate";
+import Input1 from "./Input1";
+import CheckBox1 from "./CheckBox";
 
 function App() {
-
   const [input1, setInput1] = useState(Math.round(Math.random())); //seteo el valor aleatoriamente entre 1 y 0
-  const changeInputValue = (event) => {
-    //console.log(event.target.value);
-    setInput1(event.target.value == 1 ? 1 : 0);
-  }
 
   const [checkBox, setCheckBox] = useState(0);
-  const changeCheckBox = (event) => {
-    //console.log(event.target.value);
-    setCheckBox(event.target.value = 1 );
-  }
 
-  const [selectValue, setSelectValue] = useState('');
-  const evaluateGate = (event) =>{
-    //console.log(event.target.value);
-    setSelectValue(event.target.value);
-  }
+  const [rangeInput, setRangeValue] = useState(0);
+  const changeRangeValue = (event) => {
+    console.log(event.target.value);
+    setRangeValue(event.target.value);
+  };
 
-  const [outPutValue, setOutPutValue] = useState('');
-  
-
-  const calculateGate = () => {
-    switch(selectValue){
-      case "and":
-         setOutPutValue(input1 && checkBox == 1 ? 1 : 0);
-         break;
-      case "or":
-         setOutPutValue(input1 || checkBox == 1 ? 1 : 0);
-         break;
-      case "nand":
-         setOutPutValue(!(input1 && checkBox == 1 ? 1 : 0));
-         break;
-      case "nor":
-         setOutPutValue(!(input1 || !checkBox == 1 ? 1: 0));
-         break;
-      case "xor":
-         setOutPutValue(input1 !== checkBox == 1 ? 1: 0);
-         break;
-         default:
-           return "Intente de nuevo";
-    }
-  }
+  const [radioInput, setRadioInput] = useState(0);
+  const changeRadioValue = (event) => {
+    console.log(event.target.value);
+    radioInput === 0 ? setRadioInput(0) : setRadioInput(1);
+  };
 
   return (
     <div className="App">
-      <div>
-        <label for="input1">Entrada 1:</label>
-        <input type="number" id="input1" value={input1} onChange = {changeInputValue} />
+      <div className="calculate1">
+        <div>
+          <Input1 input1={input1} setInput1={setInput1} />
+        </div>
+        <div>
+          <CheckBox1 checkBox1={checkBox} setCheckBox1={setCheckBox} />
+        </div>
+        <div>
+          <LogicGate input1={input1} input2={checkBox} />
+        </div>
       </div>
-      <div>
-        <label><input type="checkbox" value={checkBox} onChange = {changeCheckBox}/> Entrada 2</label>
+      <div className="calculate2">
+        <label>Entrada 3:</label>
+        <input
+          type="range"
+          max="1"
+          step="1"
+          value={rangeInput}
+          onChange={changeRangeValue}
+        />
+        <br></br>
+        <label>Entrada 4: </label>
+        <input
+          type="radio"
+          value={radioInput}
+          onChange={changeRadioValue}
+        />{" "}
+        <LogicGate input1={radioInput} input2={radioInput} />
       </div>
-      <div>
-        <label for="selectGate">Compuerta lógica:</label>
-        <select id="selectGate" value={selectValue} onChange = {evaluateGate}>
-        <option>Seleccione</option>
-        <option value={"and"}>AND</option>
-        <option value={"or"}>OR</option>
-        <option value={"nand"}>NAND</option>
-        <option value={"nor"}>NOR</option>
-        <option value={"xor"}>XOR</option>
-        </select>
+      <div className="calculate3">
+        <LogicGate />
       </div>
-        <button onClick={calculateGate} >Realizar cálculo</button>
-        <div><span>Salida: { outPutValue }</span></div>
     </div>
   );
 }
