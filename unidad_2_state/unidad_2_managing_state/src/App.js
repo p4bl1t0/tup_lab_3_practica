@@ -1,71 +1,81 @@
+import { useState } from "react";
+
 import "./App.css";
 
-import { useState } from "react";
+import LogicGates from "./components/LogicGates";
+import TextInput from "./components/TextInput";
+import CheckInput from "./components/CheckInput";
 
 function App() {
   const [newInput1, setNewInput1] = useState(Math.round(Math.random()));
-  const [checked1, setChecked1] = useState("");
-  const [result, setResult] = useState("");
+  const [checked1, setChecked1] = useState(0);
+  const [rangeInput, setRanegeInput] = useState(0);
+  const [radioValue, setRadioValue] = useState(0);
+  const [logicOne, setLogicOne] = useState(0);
+  const [logicTwo, setLogicTwo] = useState(0);
 
-  const changeInput = (event) => {
-    setNewInput1(event.target.value === "1" ? 1 : 0);
+  const changeInput = (value) => {
+    setNewInput1(value);
   };
 
-  const ChangeCheckbox = () => {
-    setChecked1(checked1 === 1 ? 0 : 1);
-  };
-
-  const changeSelectGate = (event) => {
-    switch (event.target.value) {
-      case "OR":
-        setResult(newInput1 || checked1 ? 1 : 0);
-        break;
-      case "AND":
-        setResult(newInput1 && checked1 ? 1 : 0);
-        break;
-      case "NOR":
-        setResult(newInput1 || checked1 ? 0 : 1);
-        break;
-      case "NAND":
-        setResult(newInput1 && checked1 ? 0 : 1);
-        break;
-      case "XOR":
-        setResult(newInput1 !== checked1 ? 1 : 0);
-        break;
-      default:
-        break;
-    }
+  const ChangeCheckbox = (value) => {
+    setChecked1(value);
   };
 
   return (
     <div className="App">
+      <TextInput label="Entrada 1:" onChange={changeInput} />
+      <CheckInput label="Entrada 2:" onChange={ChangeCheckbox} />
       <div>
-        <label for="input1">Entrada 1:</label>
-        <input
-          type="number"
-          id="input1"
-          value={newInput1}
-          onChange={changeInput}
+        <LogicGates
+          newInput={newInput1}
+          checked_={checked1}
+          onChange={(valor) => {
+            setLogicOne(valor);
+          }}
         />
       </div>
+      <hr />
+      <div>
+        <label>Entrada 3: </label>
+        <input
+          type="range"
+          min="0"
+          max="1"
+          value={rangeInput}
+          onChange={(event) => {
+            setRanegeInput(parseInt(event.target.value, 10));
+          }}
+        />
+      </div>
+      <div>Entrada 4: </div>
       <div>
         <label>
-          <input type="checkbox" onChange={ChangeCheckbox} /> Entrada 2
+          <input name="entrada 4" type="radio" value={radioValue} onChange={(event) => {
+            setRadioValue(event.target.value ? 1 : 0);
+          }}/> 0
+        </label>
+        <label>
+          <input name="entrada 4" type="radio" value={radioValue} onChange={(event) => {
+            setRadioValue(event.target.value ? 1 : 0);
+          }}/> 1
         </label>
       </div>
       <div>
-        <label for="selectGate">Compuerta lógica:</label>
-        <select id="selectGate" onChange={changeSelectGate}>
-          <option>OR</option>
-          <option>AND</option>
-          <option>NAND</option>
-          <option>NOR</option>
-          <option>XOR</option>
-        </select>
+        <LogicGates
+          newInput={rangeInput}
+          checked_={radioValue}
+          onChange={(valor) => {
+            setLogicTwo(valor);
+          }}
+        />
       </div>
+      <hr />
       <div>
-        <span>Salida: {result}</span>
+        valor compuertas: {logicOne} - {logicTwo}
       </div>
+      <LogicGates newInput={logicOne} checked_={logicTwo} />
+      
     </div>
   );
 }
