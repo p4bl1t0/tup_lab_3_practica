@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { validate, randomNumber } from "./lib/functions";
-const LogicInput = ({ label, onChange }) => {
-  const [inputValue, setInputValue] = useState(randomNumber());
+import { validate } from "../lib/functions";
+
+const LogicInput = ({ label, value, onChange }) => {
+  const [inputValue, setInputValue] = useState(value);
   return (
     <div>
-      <label for="input1"> {label} </label>
+      <label htmlFor="input1"> {label} </label>
+      <br />
       <input
         type="number"
         id="input1"
@@ -13,7 +15,9 @@ const LogicInput = ({ label, onChange }) => {
         value={inputValue}
         onChange={(e) => {
           setInputValue(validate(e.target.value));
-          onChange(e.target.value);
+          if (typeof onChange === "function") {
+            onChange(e.target.value);
+          }
         }}
       />
     </div>
