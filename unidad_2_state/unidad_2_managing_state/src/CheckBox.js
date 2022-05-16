@@ -7,7 +7,7 @@ const CheckBox1 = ({ checkBox1, setCheckBox1 }) => {
   };
   return (
     <div>
-      <label>Entrada 2</label>
+      <label>Entrada 2:</label>
       <input type="checkbox" value={checkBox1} onChange={changeCheckBox} />{" "}
     </div>
   );
