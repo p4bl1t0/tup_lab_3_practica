@@ -1,0 +1,4 @@
+Buenas profesores, para completar la entrega de esta tarea paso este .txt, espero que no sea molesto.
+Paso el link de la pull request.
+
+https://github.com/p4bl1t0/tup_lab_3_practica/pull/8

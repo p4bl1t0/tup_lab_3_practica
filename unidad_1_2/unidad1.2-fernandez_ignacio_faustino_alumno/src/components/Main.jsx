@@ -1,12 +1,17 @@
 import React from "react";
 import Body from "./Body";
+import Blogpost from "./Blogpost";
+import "./Main.css";
 
-const Main = ({ pageBody }) => {
+const Main = ({ PageBody }) => {
   return (
-    <div>
-      <Body pageBody={pageBody} />
+    <div className="Main">
+      <div className="Main_text">
+        <Body body={PageBody} />
+      </div>
+      <Blogpost />
       <nav>
-        <ul>
+        <ul className="List">
           <li>
             <a
               href="https://github.com/Ignacioff56/tup_lab_3_practica/tree/main/unidad_1_2"
@@ -14,7 +19,7 @@ const Main = ({ pageBody }) => {
               rel="noreferrer"
             >
               {" "}
-              Repositorio de Github.
+              Repositorio de Github
             </a>
           </li>
           <li>

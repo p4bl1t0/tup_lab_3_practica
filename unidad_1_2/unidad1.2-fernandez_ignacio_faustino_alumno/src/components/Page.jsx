@@ -1,8 +1,9 @@
 import React from "react";
+import "./Page.css";
 
 const Page = ({ children }) => {
   return (
-    <div>
+    <div className="Page">
       <hr />
       {children}
       <hr />
