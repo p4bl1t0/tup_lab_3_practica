@@ -1,10 +1,10 @@
 import React from 'react';
-import './Body.css';
 
-const Body = ({pageBody}) => {
+
+const Body = ({body}) => {
   return (
     <div>
-        <div>{pageBody}</div>
+        <div className='body'>{body}</div>
     </div>
   );
 };
