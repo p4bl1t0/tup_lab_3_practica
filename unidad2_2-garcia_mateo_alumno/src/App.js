@@ -9,6 +9,16 @@ function App() {
     setInput(e.target.value);
   };
 
+  const arrayCleaner = () => {
+    setArray([]);
+  };
+
+  const editInput = () => {
+    setInput("");
+    document.getElementById("edit").value = input2;
+    
+  };
+
   const buttonHandler = () => {
     input !== "" ? setArray([...array, input]) : alert("Ingrese un valor");
     setInput("");
@@ -34,11 +44,15 @@ function App() {
               )
             ) : (
               <div>
-                <input type="text" value={value} />
+                <button onClick={editInput}>Editar</button>
+                <input id="edit" type="text" value={value} />
               </div>
             )}
           </p>
         ))}
+      </div>
+      <div>
+        <button onClick={arrayCleaner}>Borrar</button>
       </div>
     </div>
   );
