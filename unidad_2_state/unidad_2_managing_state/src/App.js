@@ -9,16 +9,23 @@ function App() {
   const [inputOne, setInputOne] = useState(randomNumber());
   const [checked1, setChecked1] = useState(0);
   const [result, setResult] = useState(0);
+  const [result2, setResult2] = useState(0);
   const [range, setRange] = useState(0);
   const [radio, setRadio] = useState(0);
-  const handleRange = (e) => {
+  const handleRange = e => {
     setRange(e.target.value);
+    if (Number(e.target.value) >= 50) {
+      setRange(1);
+    } else {
+      setRange(0);
+    }
   };
-  const handleRadio = (e) => {
+  const handleRadio = e => {
     radio === 0 ? setRadio(1) : setRadio(0);
   };
   return (
     <div className="App">
+      <h2>Compuerta 1</h2>
       <Input1 inputOne={inputOne} setInputOne={setInputOne} />
       <Checkbox checked1={checked1} setChecked1={setChecked1} />
       <LogicGates
@@ -28,17 +35,32 @@ function App() {
         setResult={setResult}
       />
       <div>
-        <span> Salida: {result}</span>
+        <span> Salida 1: {result}</span>
       </div>
+
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+
       <div>
-        <input type="range" value={range} onChange={handleRange} />
-        <input
-          type="radio"
-          value={radio}
-          name="radios"
-          onChange={handleRadio}
-        />
-        <input type="radio" value={radio} name="radios" />
+        <h2>Compuerta 2</h2>
+        <input type="range" onChange={e => handleRange(e)} />
+        <input type="radio" name="radios" onClick={() => setRadio(0)} />
+        <input type="radio" name="radios" onClick={() => setRadio(1)} />
+      </div>
+      <LogicGates
+        input1={radio}
+        checked1={range}
+        result={result2}
+        setResult={setResult2}
+      />
+      <div>
+        <span> Salida 2: {result2}</span>
       </div>
     </div>
   );
