@@ -3,7 +3,9 @@ import "./App.css";
 
 function App() {
   const [input1, setInput1] = useState("");
-  const [array1, setArray] = useState([]);
+  const [array1, setArray1] = useState([]);
+  const [value2, setValue2] = useState();
+  const [editVariable, setEditVariable] = useState(false);
 
   const handleInputText = (event) => {
     console.log(event.target.value);
@@ -11,14 +13,31 @@ function App() {
   };
 
   const updateArray = () => {
-    input1 !== ""
-      ? setArray([...array1, input1])
-      : console.log("No se ingresó nada");
-    setInput1(""); //vacio el campo de texto
+    if(input1 !== ""){
+      if(!editVariable){
+        setArray1([...array1, input1])
+    }else{
+      const array2 =  array1.filter((x, z) => z !== value2);
+      setArray1([...array2, input1]);
+      }
+      setEditVariable(false);
+      setInput1(""); //vacio el campo de texto
+    }
   };
 
+  const editHandler = (index) =>{
+    setEditVariable(true);
+    setValue2(index);
+  }
+  const deleteHandler = (index) =>{
+    const array2 = array1.filter((x, z) => z !== index);
+    setArray1([...array2]);
+      
+  };
+
+
   return (
-    <div className="App">
+    <div  className="App">
       <div>
         <label for="input1">Ingrese Texto: </label>
         <input
@@ -29,11 +48,12 @@ function App() {
         />
       </div>
       <div>
-        <button onClick={updateArray}>Agregar</button>
+        <button type="submit" onClick={updateArray}>{ editVariable ? "Editar" : "Agregar"}</button>
       </div>
       <div>
         {array1.map((currentValue, index) => (
-          <p key={index}>
+          
+          <span key={index}>
             {/*para que no se rompa si es repite */}
             {Number(currentValue) ? (
               Number(currentValue % 2) === 0 ? (
@@ -48,11 +68,18 @@ function App() {
                 <input type="text" value={currentValue} />
               </div>
             )}
-          </p>
-        ))}
+            <div>
+      <button type="button" onClick={() => deleteHandler(index)}>Borrar</button>
       </div>
+      <div>
+        <button onClick={() => editHandler(index)}>Editar</button>
+      </div>
+          </span>
+        ))}
+        
+      </div>
+      
     </div>
   );
 }
-
 export default App;
