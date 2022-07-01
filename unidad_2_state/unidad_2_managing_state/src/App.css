@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .App-logo {
@@ -22,6 +24,26 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.final-result-container {
+  background-color: lightgrey;
+  font-weight: 500;
+}
+.input3 {
+  box-sizing: border-box;
+  width: 100%;
+  border: solid black 1px;
+  padding: 3px;
+  margin: 1%;
+  border-radius: 5px;
+}
+.gate {
+  width: fit-content;
+  box-sizing: border-box;
+  border: solid black 1px;
+  padding: 10px;
+  margin: 1%;
+  border-radius: 5px;
 }
 
 .App-link {

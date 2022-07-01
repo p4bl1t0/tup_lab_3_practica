@@ -1,39 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
-const LogicGates = ({ input1, input2 }) => {
+const LogicGates = ({ input1, input2, onSavedResult }) => {
   const [selectValue, setSelectValue] = useState("OR");
   const getSelect = (event) => {
     setSelectValue(event.target.value);
   };
-  // const [finalResult, setFinalResult] = useState("0");
 
-  let result;
-  const changeResult = (value1, value2, option) => {
-    switch (option) {
+  const changeResult = () => {
+    let result;
+    switch (selectValue) {
       case "OR":
-        value1 || value2 ? (result = "1") : (result = "0");
+        input1 || input2 ? (result = "1") : (result = "0");
         return result;
       case "AND":
-        value1 && value2 ? (result = "1") : (result = "0");
+        input1 && input2 ? (result = "1") : (result = "0");
         return result;
       case "NAND":
-        !value1 && !value2 ? (result = "1") : (result = "0");
+        !input1 && !input2 ? (result = "1") : (result = "0");
         return result;
       case "NOR":
-        !value1 || !value2 ? (result = "1") : (result = "0");
+        !input1 || !input2 ? (result = "1") : (result = "0");
         return result;
       case "XOR":
-        value1 !== value2 ? (result = "1") : (result = "0");
+        input1 !== input2 ? (result = "1") : (result = "0");
         return result;
     }
   };
-  // const handleResult = () => {
-  //   changeResult(input1, input2, selectValue);
-  //   console.log("resultado final:", finalResult);
-  //   onSavedResult(finalResult);
-  //   return finalResult.toString;
-  // };
+  useEffect(() => {
+    if (typeof onSavedResult === "function") onSavedResult(changeResult());
+  }, [input1, input2, selectValue]);
+
   return (
     <div className="LogicGates">
       <div>
@@ -47,8 +44,7 @@ const LogicGates = ({ input1, input2 }) => {
         </select>
       </div>
       <div>
-        <span>Salida: {changeResult(input1, input2, selectValue)}</span>
-        {/* <span>Salida: {handleResult}</span> */}
+        <span>Salida: {changeResult()}</span>
       </div>
     </div>
   );

@@ -16,7 +16,6 @@ const Input1 = ({ onInput1Saved }) => {
         value={input1}
         onChange={changeInputHandler}
       />
-      ;
     </div>
   );
 };
