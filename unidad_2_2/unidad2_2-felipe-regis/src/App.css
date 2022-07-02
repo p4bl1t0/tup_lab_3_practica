@@ -1,0 +1,32 @@
+.app {
+  font-size: 120%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  padding-top: 20%;
+  font-weight: 800;
+  background-color: rgb(249, 224, 224);
+  height: 63vh;
+}
+
+.label-add {
+  font-size: 110%;
+}
+
+.input-add {
+  font-size: 95%;
+}
+
+.btn-add {
+  background-color:rgb(77, 169, 77);
+  font-weight: 800;
+}
+
+.btn-remove {
+  background-color: rgb(255, 0, 0);
+  font-weight: 800;
+}
+
+.btn-edit {
+  background-color: rgb(77, 169, 77);
+  font-weight: 800;
+}
