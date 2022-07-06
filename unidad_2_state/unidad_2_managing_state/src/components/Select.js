@@ -3,7 +3,7 @@ import React from "react";
 const Select = ({selectHandler}) => {
   return (
     <div>
-      <label for="selectGate">Compuerta lógica:</label>
+      <label htmlFor="selectGate">Compuerta lógica:</label>
       <select id="selectGate" onChange={selectHandler} defaultValue={"DEFAULT"}>
         <option value={"DEFAULT"} disabled>
           Seleccione una opción
