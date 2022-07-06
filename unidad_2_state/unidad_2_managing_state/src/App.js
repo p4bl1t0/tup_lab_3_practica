@@ -26,6 +26,9 @@ function App() {
   const [checkBoxValue, setCheckBoxValue] = useState(0);
   const [rangeValue, setRangeValue] = useState(0);
   const [radioValue, setRadioValue] = useState(0);
+  const [logicGateValue1, setLogicGateValue1] = useState("");
+  const [logicGateValue2, setLogicGateValue2] = useState("");
+  const [logicGateValue3, setLogicGateValue3] = useState("");
 
   const inputHandler = (elem) => {
     const intValue = parseInt(elem.target.value);
@@ -46,12 +49,14 @@ function App() {
 
   const RangeHandler = (e) => {
     setRangeValue(e.target.value);
-    if (Number(e.target.value) >= 50) {
+    if (Number(e.target) >= 50) {
       setRangeValue(1);
     } else {
       setRangeValue(0);
     }
   };
+
+
 
   return (
     <div className="App">
@@ -65,6 +70,8 @@ function App() {
         className="gate1"
         value1={inputValue}
         value2={checkBoxValue}
+        setLogicGateValue={setLogicGateValue1}
+        logicGateValue={logicGateValue1}
       />
       <br></br>
       <br></br>
@@ -76,17 +83,26 @@ function App() {
         <input type="radio" name="radios" onClick={() => setRadioValue(0)} />
         <input type="radio" name="radios" onClick={() => setRadioValue(1)} />
       </div>
-      <LogicGates id="gate2" value1={rangeValue} value2={radioValue} />
+      <LogicGates
+        id="gate2"
+        value1={rangeValue}
+        value2={radioValue}
+        setLogicGateValue={setLogicGateValue2}
+        logicGateValue={logicGateValue2}
+      />
       <br></br>
       <br></br>
       <br></br>
       <br></br>
       <div>
         <h2>Compuerta 3</h2>
-        <p>
-          No supe como hacer esta compuerta, sería la que toma los resultados de
-          las 2 anteriores y las somete a una nueva compuerta lógica
-        </p>
+        <LogicGates
+        id="gate3"
+        value1={logicGateValue1}
+        value2={logicGateValue2}
+        setLogicGateValue={setLogicGateValue3}
+        logicGateValue={logicGateValue3}
+      />
       </div>
     </div>
   );
