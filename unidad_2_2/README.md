@@ -25,10 +25,6 @@ npx create-react-app unidad2_2-apellido_nombre_alumno
 
 ### Tarea 2: 
 
-* Para cada uno de los items del `array` anterior renderizar junto al componente un `button` etiquetado como "borrar" de manera que al presionar dicho botón se elimine el elemento del arreglo.
+* Para cada uno de los items del `array` anterior renderizar junto al componente agrego un `button` etiquetado como "borrar" de manera que al presionar dicho botón se elimine el elemento del arreglo.
 
 * Agregar un `button` junto al campo de texto que se está renderizando cuando el valor es un texto y etiquetarlo como "editar". Al presionarlo debe cambiar el valor del elemento de esa línea en el `array` 
-
-### Tarea 3
-
-Armar una cuenta regresiva con useEffect y setInterval que al llegar a 2 minutos borre todo el array y re comience la cuenta
