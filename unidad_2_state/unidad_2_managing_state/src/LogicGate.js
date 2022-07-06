@@ -17,19 +17,19 @@ export default function LogicGate({
   const calculateGate = () => {
     switch (selectValue) {
       case "and":
-        setOutPutValue(input1 && input2 == 1 ? 1 : 0);
+        setOutPutValue((input1 && input2) == 1 ? 1 : 0);
         break;
       case "or":
-        setOutPutValue(input1 || input2 == 1 ? 1 : 0);
+        setOutPutValue((input1 || input2) == 1 ? 1 : 0);
         break;
       case "nand":
-        setOutPutValue(!(input1 && input2 == 1 ? 1 : 0));
+        setOutPutValue(!(input1 && input2) == 1 ? 1 : 0);
         break;
       case "nor":
-        setOutPutValue(!(input1 || !input2 == 1 ? 1 : 0));
+        setOutPutValue(!(input1 || input2) == 1 ? 1 : 0);
         break;
       case "xor":
-        setOutPutValue((input1 !== input2) == 1 ? 1 : 0);
+        setOutPutValue((!input1 !== !input2) == 1 ? 1 : 0);
         break;
       default:
         return "Intente de nuevo";
