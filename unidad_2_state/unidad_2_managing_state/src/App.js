@@ -12,6 +12,8 @@ function App() {
   const [result2, setResult2] = useState(0);
   const [range, setRange] = useState(0);
   const [radio, setRadio] = useState(0);
+  const [result3, setResult3] = useState(0);
+
   const handleRange = e => {
     setRange(e.target.value);
     if (Number(e.target.value) >= 50) {
@@ -61,6 +63,27 @@ function App() {
       />
       <div>
         <span> Salida 2: {result2}</span>
+      </div>
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+
+      <div>
+        <h2>Combinacion de compuertas</h2>
+      </div>
+      <LogicGates
+        input1={result}
+        checked1={result2}
+        result={result3}
+        setResult={setResult3}
+      />
+      <div>
+        <span> Salida 2: {result3}</span>
       </div>
     </div>
   );
