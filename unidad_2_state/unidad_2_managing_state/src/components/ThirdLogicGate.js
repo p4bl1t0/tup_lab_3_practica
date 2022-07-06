@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const LogicGates = ({ inputA, inputB, setResult }) => {
+const ThirdLogicGate = ({ inputA, inputB, setResult }) => {
   const [selectInput, setSelectInput] = useState("");
   const selectChangeHandler = (e) => {
     setSelectInput(e.target.value);
@@ -11,19 +11,14 @@ const LogicGates = ({ inputA, inputB, setResult }) => {
     b = Number(b);
     switch (gate) {
       case "and":
-        setResult(Number(a && b));
         return Number(a && b);
       case "or":
-        setResult(Number(a || b));
         return Number(a || b);
       case "xor":
-        setResult(Number(a !== b));
         return Number(a !== b);
       case "nand":
-        setResult(Number(!(a && b)));
         return Number(!(a && b));
       case "nor":
-        setResult(Number(!(a || b)));
         return Number(!(a || b));
       default:
         return "Seleccione una puerta lógica";
@@ -48,4 +43,4 @@ const LogicGates = ({ inputA, inputB, setResult }) => {
   );
 };
 
-export default LogicGates;
+export default ThirdLogicGate;

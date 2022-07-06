@@ -3,7 +3,9 @@ const InputComponent = ({ inputName, inputId, inputType, input, setInput }) => {
     if (typeof setInput === "function") {
       switch (inputType) {
         case "number":
-          setInput(e.target.value);
+          if (e.target.value > 1 || e.target.value < 0) {
+            setInput(0);
+          } else setInput(e.target.value);
           break;
         case "checkbox":
           setInput(e.target.checked);
@@ -22,14 +24,7 @@ const InputComponent = ({ inputName, inputId, inputType, input, setInput }) => {
   return (
     <div>
       <label for={inputId}>{inputName}</label>
-      <input
-        value={input}
-        type={inputType}
-        name={inputId}
-        min="0"
-        max="1"
-        onChange={inputHandler}
-      />
+      <input value={input} type={inputType} name={inputId} min="0" max="1" onChange={inputHandler} />
     </div>
   );
 };
