@@ -3,79 +3,93 @@ import { useState } from "react";
 import "./App.css";
 
 import LogicGates from "./components/LogicGates";
-import TextInput from "./components/TextInput";
+import NumberInput from "./components/NumberInput";
 import CheckInput from "./components/CheckInput";
 
 function App() {
-  const [newInput1, setNewInput1] = useState(Math.round(Math.random()));
-  const [checked1, setChecked1] = useState(0);
-  const [rangeInput, setRanegeInput] = useState(0);
+  const [inputNumberValue, setInputNumberValue] = useState("1");
+  const [checkboxValue, setCheckboxValue] = useState(0);
+  const [rangeValue, setRangeValue] = useState(0);
   const [radioValue, setRadioValue] = useState(0);
-  const [logicOne, setLogicOne] = useState(0);
-  const [logicTwo, setLogicTwo] = useState(0);
+  const [logicGateValueOne, setLogicGateValueOne] = useState("");
+  const [logicGateValueTwo, setLogicGateValueTwo] = useState("");
+  const [logicGateValueThree, setLogicGateValueThree] = useState("");
 
-  const changeInput = (value) => {
-    setNewInput1(value);
+  const changeInputHandler = (elem) => {
+    const value = parseInt(elem.target.value);
+    if (value < 0 || value > 1) {
+      setInputNumberValue(0);
+    } else {
+      setInputNumberValue(1);
+    }
   };
 
-  const ChangeCheckbox = (value) => {
-    setChecked1(value);
+  const changeCheckboxHandler = (elem) => {
+    if (elem.target.checked) {
+      setCheckboxValue(1);
+    } else {
+      setCheckboxValue(0);
+    }
+  };
+
+  const changeRangeHandler = (e) => {
+    setRangeValue(e.target.value);
+    if (Number(e.target) >= 50) {
+      setRangeValue(1);
+    } else {
+      setRangeValue(0);
+    }
   };
 
   return (
     <div className="App">
-      <TextInput label="Entrada 1:" onChange={changeInput} />
-      <CheckInput label="Entrada 2:" onChange={ChangeCheckbox} />
+      <h3>Compuerta 1</h3>
+      <NumberInput
+        inputHandler={changeInputHandler}
+        inputValue={inputNumberValue}
+      />
+      <CheckInput
+        checkboxHandler={changeCheckboxHandler}
+        checkboxValue={checkboxValue}
+      />
+      <LogicGates
+        className="gateOne"
+        valueOne={inputNumberValue}
+        valueTwo={checkboxValue}
+        setLogicGate={setLogicGateValueOne}
+        logicGate={logicGateValueOne}
+      />
+      <br></br>
+      <hr></hr>
       <div>
-        <LogicGates
-          newInput={newInput1}
-          checked_={checked1}
-          onChange={(valor) => {
-            setLogicOne(valor);
-          }}
-        />
-      </div>
-      <hr />
-      <div>
-        <label>Entrada 3: </label>
-        <input
-          type="range"
-          min="0"
-          max="1"
-          value={rangeInput}
-          onChange={(event) => {
-            setRanegeInput(parseInt(event.target.value, 10));
-          }}
-        />
-      </div>
-      <div>Entrada 4: </div>
-      <div>
+        <h3>Compuerta 2</h3>
+        <input type="range" onChange={(e) => changeRangeHandler(e)} />
         <label>
-          <input name="entrada 4" type="radio" value={radioValue} onChange={(event) => {
-            setRadioValue(event.target.value ? 1 : 0);
-          }}/> 0
+          <input type="radio" name="1" onClick={() => setRadioValue(0)} />0
         </label>
         <label>
-          <input name="entrada 4" type="radio" value={radioValue} onChange={(event) => {
-            setRadioValue(event.target.value ? 1 : 0);
-          }}/> 1
+          <input type="radio" name="1" onClick={() => setRadioValue(1)} />1
         </label>
       </div>
+      <LogicGates
+        id="gateTwo"
+        valueOne={rangeValue}
+        valueTwo={radioValue}
+        setLogicGate={setLogicGateValueTwo}
+        logicGate={logicGateValueTwo}
+      />
+      <br></br>
+      <hr></hr>
       <div>
+        <h3>Compuerta 3</h3>
         <LogicGates
-          newInput={rangeInput}
-          checked_={radioValue}
-          onChange={(valor) => {
-            setLogicTwo(valor);
-          }}
+          id="gateThree"
+          valueOne={logicGateValueOne}
+          valueTwo={logicGateValueTwo}
+          setLogicGate={setLogicGateValueThree}
+          logicGate={logicGateValueThree}
         />
       </div>
-      <hr />
-      <div>
-        valor compuertas: {logicOne} - {logicTwo}
-      </div>
-      <LogicGates newInput={logicOne} checked_={logicTwo} />
-      
     </div>
   );
 }
