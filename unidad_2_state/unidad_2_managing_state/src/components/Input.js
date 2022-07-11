@@ -15,16 +15,30 @@ const Input = ({ type, value, onChange, id, text }) => {
       } else {
         onChange(0);
       }
-    } else if (type === "range") {
-      onChange(parseInt(e.target.value));
     } else {
-      if (e.target.checked) {
-        onChange(1);
-      } else {
-        onChange(0);
-      }
+      onChange(parseInt(e.target.value))
     }
   };
+  if (type === "radio" ) {
+    return (
+      <div onChange={inputChangeHandler}>
+        <label htmlFor="radio1">Verdadero</label>
+        <input
+          type={type}
+          value={1}
+          id="radio1"
+          name={id}
+        />
+        <label htmlFor="radio2">Falso</label>
+        <input
+          type={type}
+          value={0}
+          id="radio2"
+          name={id}
+        />
+      </div>
+    );
+  }
   return (
     <>
       <label htmlFor={id}>{text}</label>
