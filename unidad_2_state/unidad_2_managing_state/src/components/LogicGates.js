@@ -47,9 +47,15 @@ const LogicGates = ({ inputOne, inputTwo }) => {
           <option value="xor">Xor</option>
         </select>
       </div>
-      <div>
-        <span>Salida: {output ? "Verdadero" : "Falso"}</span>
-      </div>
+      {output ? (
+        <div>
+          <span className="verdadero">Salida: Verdadero</span>
+        </div>
+      ) : (
+        <div>
+          <span className="falso">Salida: Falso</span>
+        </div>
+      )}
     </div>
   );
 };

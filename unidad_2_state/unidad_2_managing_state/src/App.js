@@ -8,12 +8,12 @@ function App() {
   const [checkboxValue, setCheckboxValue] = useState(0);
   const [rangeValue, setRangeValue] = useState(0);
   const [radioValue, setRadioValue] = useState(0);
-  const [gateOutputOne, setGateOutputOne] = useState(false);
-  const [gateOutputTwo, setGateOutputTwo] = useState(false);
-  const [gateOutputthree, setGateOutputthree] = useState(false);
   return (
     <div className="App">
-      <div className="section-one">
+      <h1>Aplicación de Compuertas Lógicas</h1>
+      <h4>Ingrese los valores deseados y aplique una compuerta en cada sección para obtener el resultado de la compuerta lógica.</h4>
+      <div className="section section-one">
+        <h2>Puerta lógica 1</h2>
         <Input
           type="number"
           value={inputValue}
@@ -31,10 +31,10 @@ function App() {
         <LogicGates
           inputOne={inputValue}
           inputTwo={checkboxValue}
-          onChange={setGateOutputOne}
         />
       </div>
-      <div className="section-two">
+      <div className="section section-two">
+        <h2>Puerta lógica 2</h2>
         <Input
           type="range"
           value={rangeValue}
@@ -52,7 +52,6 @@ function App() {
         <LogicGates
           inputOne={rangeValue}
           inputTwo={radioValue}
-          onChange={setGateOutputTwo}
         />
       </div>
     </div>
