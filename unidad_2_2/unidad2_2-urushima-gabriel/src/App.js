@@ -15,12 +15,13 @@ function App() {
     setInputText("");
   };
 
-  function removeInput(indexToRemove) {
-    const updatedItems = array.filter(
-      (_array, index) => index !== indexToRemove
-    );
-    setArray(updatedItems);
-  }
+  const removeInput = (indexItem) => {
+    setArray((array) => array.filter((array, index) => index !== indexItem));
+  };
+
+  const editInput = {
+    
+  };
 
   return (
     <>
@@ -34,17 +35,19 @@ function App() {
             {Number(element) ? (
               Number(element % 2) === 0 ? (
                 <p>
-                  Par<button onClick={removeInput}>Borrar</button>
+                  Par<button onClick={() => removeInput(index)}>Borrar</button>
                 </p>
               ) : (
                 <p>
-                  Impar<button onClick={removeInput}>Borrar</button>
+                  Impar
+                  <button onClick={() => removeInput(index)}>Borrar</button>
                 </p>
               )
             ) : (
               <div>
                 <input type="text" value={element} />
-                <button onClick={removeInput}>Borrar</button>
+                <button onClick={() => removeInput(index)}>Borrar</button>
+                <button onChange={() => editInput}>Editar</button>
               </div>
             )}
             {}
