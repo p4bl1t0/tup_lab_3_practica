@@ -1,11 +1,18 @@
 import React from "react";
 
-const ShowItem = ({array, setArray}) => {
+const ShowItem = ({ array, setArray }) => {
   const deleteItem = (i) => {
     if (i > -1) {
       array.splice(i, 1);
       setArray([...array]);
     }
+  };
+
+  const isEven = (num) => {
+    num = Number(Math.round(num))
+    return num % 2 === 0
+      ? num + " es par"
+      : num + " es impar";
   };
 
   const editItem = (index) => {
@@ -17,21 +24,19 @@ const ShowItem = ({array, setArray}) => {
   return (
     <div>
       {array.map((item, index) => (
-        <p key={index}>
-          {Number(item % 2) === 0 ? (
-            item
+        <div key={index}>
+          {isNaN(item) ? (
+            <input type="text" value={item}></input>
           ) : (
-            <div>
-              <input type="text" value={item} />
-              <button
-                onClick={() => {
-                  editItem(index);
-                }}
-              >
-                Editar
-              </button>
-            </div>
+            <p>{isEven(item)}</p>
           )}
+          <button
+            onClick={() => {
+              editItem(index);
+            }}
+          >
+            Editar
+          </button>
           <button
             onClick={() => {
               deleteItem(index);
@@ -39,7 +44,7 @@ const ShowItem = ({array, setArray}) => {
           >
             Eliminar
           </button>
-        </p>
+        </div>
       ))}
     </div>
   );
