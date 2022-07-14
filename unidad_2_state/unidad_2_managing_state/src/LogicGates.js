@@ -1,5 +1,9 @@
-export default function LogicGates({ value1, value2, setGateValue }) {
-  
+import { useState } from "react";
+
+export default function LogicGates({ value1, value2 }) {
+
+  const [gateValue, setGateValue] = useState(null);
+
   const changeSelectGate = (event) => {
     switch (event.target.value) {
       case "OR":
@@ -25,13 +29,20 @@ export default function LogicGates({ value1, value2, setGateValue }) {
   return (
     <div>
       <label for="selectGate">Compuerta lógica:</label>
-      <select id="selectGate" onChange={changeSelectGate}>
+      <br/>
+      <select id="selectGate" onClick={changeSelectGate}>
         <option>OR</option>
         <option>AND</option>
         <option>NAND</option>
         <option>NOR</option>
         <option>XOR</option>
       </select>
+      <div>
+        <span>Salida:
+          <br/>
+          {gateValue}
+          </span>
+      </div>
     </div>
   );
 }

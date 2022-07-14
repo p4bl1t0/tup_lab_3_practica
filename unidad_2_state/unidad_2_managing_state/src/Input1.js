@@ -8,6 +8,7 @@ export default function Input1({setInputValue, inputValue}) {
   return (
     <div>
       <label for="input1">Entrada 1: </label>
+      <br/>
       <input
         type="number"
         id="input1"
