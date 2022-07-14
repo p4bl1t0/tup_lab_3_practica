@@ -1,67 +1,28 @@
-import {useState} from 'react';
+import { useState } from "react";
+import LogicGates from "./LogicGates";
+import CheckBox from "./CheckBox";
+import Input1 from "./Input1";
 
-import './App.css';
+import "./App.css";
 
 function App() {
-
+  
   const [inputValue, setInputValue] = useState(Math.round(Math.random()));
-
-  const changeInput = (event) => {
-    setInputValue( parseInt(event.target.value) === 1? 1 : 0);
-  };
-
-  const [checkBox, setCheckBox] = useState("");
-
-  const changeCheckBox = () => {
-  setCheckBox(checkBox === 1? 0 : 1);
-  };
-
-  const[gateValue, setGateValue] = useState("");
-
-  const changeSelectGate = (event) => {
-    switch (event.target.value) {
-      case "OR":
-        setGateValue(inputValue||checkBox? 1: 0); 
-        break;
-      case "AND":
-        setGateValue(inputValue&&checkBox? 1: 0);
-        break;
-      case "NOR":
-        setGateValue(inputValue||checkBox? 0: 1);
-        break;
-      case "NAND":
-        setGateValue(inputValue&&checkBox? 0: 1);
-        break;
-      case "XOR":
-        setGateValue(inputValue!==checkBox? 1: 0);
-        break;
-      default:
-        break;
-    };
-  };
+  const [checkBox, setCheckBox] = useState(0);
+  const [gateValue, setGateValue] = useState(null);
 
   return (
     <div className="App">
-      <div>
-        <label for="input1">Entrada 1:</label>
-        <input type="number" id="input1" value = {inputValue} onChange={changeInput}/>
-      </div>
-      <div>
-        <label><input type="checkbox"  onClick={changeCheckBox}/> Entrada 2</label>
-      </div>
-        <div>
-        <label for="selectGate">Compuerta lógica:</label>
-        <select id="selectGate" onChange={changeSelectGate}>
-          <option>OR</option>
-          <option>AND</option>
-          <option>NAND</option>
-          <option>NOR</option>
-          <option>XOR</option>
-        </select>
-      </div>
-        <div><span>Salida: { gateValue }</span></div>
+      <Input1 inputValue={inputValue} setInputValue={setInputValue} />
+      <CheckBox checkBox={checkBox} setCheckBox={setCheckBox} />
+      <LogicGates
+        value1={inputValue}
+        value2={checkBox}
+        setGateValue={setGateValue}
+      />
+      <span>Salida: {gateValue}</span>
     </div>
   );
-};
+}
 
 export default App;
