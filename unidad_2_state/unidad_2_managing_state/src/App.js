@@ -1,92 +1,104 @@
 import { useState } from "react";
 import "./App.css";
-//import LogicDoor from "./components/LogicDoor";
+import TextInput from "./components/TextInput";
+import CheckBox from "./components/CheckBox";
+import LogicGates from "./components/LogicGates";
 
 const App = () => {
   const randomNum = () => Math.round(Math.random());
   const [inputValue, setInputValue] = useState(randomNum());
 
+  const [checked, setChecked] = useState(false);
+  const [inputRadio, setInputRadio] = useState("0");
+  const [inputRange, setInputRange] = useState("0");
+  const [firstDoor, setFirstDoor] = useState(0);
+  const [secondDoor, setSecondDoor] = useState(0);
+
   const changeInputValue = (event) => {
     setInputValue(event.target.value === "1" ? 1 : 0);
   };
-  //console.log(inputValue);
-
-  const [checked, setChecked] = useState(false);
 
   const handleCheckBox = () => {
-    //let checkBoxValue;
     setChecked(!checked);
   };
-  const [selectInput, setSelectInput] = useState("or");
 
-  const handleSelect = (e) => {
-    setSelectInput(e.target.value);
+  const handleRadioInput = (e) => {
+    setInputRadio(e.target.value === "1" ? 1 : 0);
   };
 
-  const [output, setOutput] = useState("");
-
-  const handleOutput = () => {
-    switch (selectInput) {
-      case "or":
-        // eslint-disable-next-line eqeqeq
-        setOutput((inputValue || checked) == 1 ? "TRUE" : "FALSE");
-        break;
-      case "and":
-        // eslint-disable-next-line eqeqeq
-        setOutput((inputValue && checked) == 1 ? "TRUE" : "FALSE");
-        break;
-      case "nand":
-        // eslint-disable-next-line eqeqeq
-        setOutput((!inputValue || !checked) == 1 ? "TRUE" : "FALSE");
-        break;
-      case "xor":
-        // eslint-disable-next-line eqeqeq
-        setOutput((!inputValue != !checked) == 1 ? "TRUE" : "FALSE");
-        break;
-      case "nor":
-        // eslint-disable-next-line eqeqeq
-        setOutput(!(inputValue || checked) == 1 ? "TRUE" : "FALSE");
-        break;
-      default:
-        return "something went wrong";
-    }
+  const handleRangeInput = (e) => {
+    setInputRange(e.target.value);
   };
+
   return (
     <div className="App">
-      <div>
-        <label htmlFor="input1">Entrada 1:</label>
-        <input
-          type="number"
-          id="input1"
-          value={inputValue}
-          onChange={(e) => changeInputValue(e)}
+      <div className="logicDoor">
+        <h4>1</h4>
+        <div>
+          <TextInput
+            inputValue={inputValue}
+            changeInputValue={changeInputValue}
+          />
+        </div>
+        <div>
+          <CheckBox checked={checked} handleCheckBox={handleCheckBox} />
+        </div>
+        <br></br>
+        <LogicGates
+          input1={inputValue}
+          input2={checked}
+          value={firstDoor}
+          onOutputChange={setFirstDoor}
         />
       </div>
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            value="1"
-            checked={checked}
-            onChange={(e) => handleCheckBox(e)}
-          />{" "}
-          Entrada 2
-        </label>
-      </div>
-      <div>
-        <label htmlFor="selectGate">Compuerta lógica:</label>
-        <select id="selectGate" onChange={handleSelect}>
-          <option value="or">OR</option>
-          <option value="and">AND</option>
-          <option value="nand">NAND</option>
-          <option value="nor">NOR</option>
-          <option value="xor">XOR</option>
-        </select>
-      </div>
-      <div>
-        <button onClick={handleOutput}>Calcular</button>
+      <br></br>
+      <br></br>
+
+      <div className="logicDoor">
+        <h4>2</h4>
+        <input
+          type="range"
+          min="0"
+          max="1"
+          value={inputRange}
+          onChange={handleRangeInput}
+        ></input>
         <br></br>
-        <span>Salida: {output}</span>
+
+        <label htmlFor="0">0</label>
+        <input
+          type="radio"
+          name="radio-input"
+          value="0"
+          onChange={handleRadioInput}
+        ></input>
+        <br></br>
+
+        <div>
+          <label htmlFor="1">1</label>
+          <input
+            type="radio"
+            name="radio-input"
+            value="1"
+            onChange={handleRadioInput}
+          ></input>
+        </div>
+
+        <br></br>
+        <LogicGates
+          input1={inputRadio}
+          input2={inputRange}
+          onOutputChange={setSecondDoor}
+          value={secondDoor}
+        />
+      </div>
+
+      <br></br>
+      <br></br>
+
+      <div className="logicDoor">
+        <h4>Cálculo de salida entre 1 y 2</h4>
+        <LogicGates input1={firstDoor} input2={secondDoor} />
       </div>
     </div>
   );
