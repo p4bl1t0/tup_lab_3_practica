@@ -1,3 +1,8 @@
-.App {
+* {
+  background-color: rgb(227, 246, 228);
+  font-family: 'Times New Roman', Times, serif;
   text-align: center;
+  font-size: x-large;
+  font-weight: 700;
+  padding: 5px;
 }

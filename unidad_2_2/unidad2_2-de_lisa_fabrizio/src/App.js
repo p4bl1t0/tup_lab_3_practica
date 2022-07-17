@@ -1,31 +1,46 @@
 import { useState } from "react";
+import WordRender from "./WordRender";
+import NumberRender from "./NumberRender";
+
 import "./App.css";
 
 function App() {
   const [inputString, setInputString] = useState([]);
   const [textValue, setTextValue] = useState("");
 
-  console.log("cadena ", inputString);
-
   const buttonHandler = () => {
-    const aux = [...inputString.concat(textValue)] ;
-      setInputString(aux);
+    if (textValue) {
+      const newSetArray = [...inputString, textValue];
+      setInputString(newSetArray);
       setTextValue("");
+    }
   };
 
   const inputTextHandler = (e) => {
-    setTextValue(e.target.value)
-  }
+    setTextValue(e.target.value);
+  };
+
+  const inputsMapper = inputString.map((itemArray) =>
+    isNaN(itemArray) ? (
+      <WordRender itemArray={itemArray} />
+    ) : (
+      <NumberRender itemArray={itemArray} />
+    )
+  );
 
   return (
     <div className="App">
-        <input
-          type="text"
-          max="100"
-          value={textValue}
-          onChange={inputTextHandler}
-        />
-        <button onClick={buttonHandler}>agregar</button>
+      <input
+        type="text"
+        max="100"
+        value={textValue}
+        onChange={inputTextHandler}
+        autoFocus
+      />
+      <button onClick={buttonHandler}>agregar</button>
+      <br />
+      <br />
+      {inputsMapper}
     </div>
   );
 }
