@@ -8,7 +8,7 @@ const Checkbox = ({ checkbox, setCheckbox }) => {
   return (
     <div>
       <label>
-        <input type="checkbox" value={checkbox} onChange={handleCheckbox} />
+        <input type="checkbox" onChange={handleCheckbox} />
         Entrada 2
       </label>
     </div>

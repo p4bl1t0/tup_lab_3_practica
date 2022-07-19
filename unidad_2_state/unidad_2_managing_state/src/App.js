@@ -19,7 +19,7 @@ function App() {
 
   const handleRange = (e) => {
     setRange(e.target.value);
-    if (Number(e.target.value) >= 40) {
+    if (Number(e.target.value) >= 50) {
       setRange(1);
     } else {
       setRange(0);
@@ -31,37 +31,46 @@ function App() {
       <Input input1={input1} setInput1={setInput1} />
       <Checkbox checkbox={checkbox} setCheckbox={setCheckbox} />
       <LogicGates
-        input11={input1}
+        input1={input1}
         checkbox={checkbox}
         select={select}
         setSelect={setSelect}
       />
-      <div>Salida: {select}</div>
+      <div>
+        <span>Salida: {select}</span>
+      </div>
 
       <hr />
 
-      <input type="range" onChange={(e) => handleRange(e)} />
-      <br />
-      <input type="radio" name="all" onClick={() => setRadio(0)} />
-      <br />
-      <input type="radio" name="all" onClick={() => setRadio(1)} />
+      <div>
+        <input type="range" onChange={(e) => handleRange(e)} />
+        <br />
+        <label>0</label>
+        <input type="radio" name="all" onClick={() => setRadio(0)} />
+        <br />
+        <label>1</label>
+        <input type="radio" name="all" onClick={() => setRadio(1)} />
+      </div>
       <LogicGates
         input1={radio}
         checkbox={range}
         select={select2}
         setSelect={setSelect2}
       />
-      <div>Salida: {select2}</div>
+      <div>
+        <span>Salida: {select2}</span>
+      </div>
 
       <hr />
-
       <LogicGates
         input1={select}
         checkbox={select2}
         select={select3}
         setSelect={setSelect3}
       />
-      <div>Salida: {select3}</div>
+      <div>
+        <span>Salida: {select3}</span>
+      </div>
     </div>
   );
 }
