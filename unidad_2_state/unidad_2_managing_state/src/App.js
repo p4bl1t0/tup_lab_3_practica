@@ -1,49 +1,67 @@
 import "./App.css";
 import { useState } from "react";
-import Select from "./components/Select";
+import LogicGates from "./components/LogicGates";
+import Input from "./components/Input";
+import Checkbox from "./components/Checkbox";
 
 function App() {
   const randomNumber = () => Math.round(Math.random());
   const [input1, setInput1] = useState(randomNumber());
+
   const [select, setSelect] = useState(0);
-  const handleInput = (event) => {
-    if (Number(event.target.value) === 1) {
-      setInput1(Number(event.target.value));
-    } else {
-      setInput1(0);
-    }
-  };
+  const [select2, setSelect2] = useState(0);
+  const [select3, setSelect3] = useState(0);
 
   const [checkbox, setCheckbox] = useState(0);
-  const handleCheckbox = () => {
-    if (checkbox === 1) {
-      setCheckbox(0);
+
+  const [range, setRange] = useState(0);
+  const [radio, setRadio] = useState(0);
+
+  const handleRange = (e) => {
+    setRange(e.target.value);
+    if (Number(e.target.value) >= 40) {
+      setRange(1);
     } else {
-      setCheckbox(1);
+      setRange(0);
     }
   };
 
   return (
     <div className="App">
-      <div>
-        <label htmlFor="input1">Entrada 1:</label>
-        <input
-          type="number"
-          id="input1"
-          value={input1}
-          onChange={handleInput}
-        />
-      </div>
-      <div>
-        <label>
-          <input type="checkbox" value={checkbox} onClick={handleCheckbox} />
-          Entrada 2
-        </label>
-      </div>
-      <Select input1={input1} checkbox={checkbox} setSelect={setSelect} />
-      <div>
-        <span>Salida: {select}</span>
-      </div>
+      <Input input1={input1} setInput1={setInput1} />
+      <Checkbox checkbox={checkbox} setCheckbox={setCheckbox} />
+      <LogicGates
+        input11={input1}
+        checkbox={checkbox}
+        select={select}
+        setSelect={setSelect}
+      />
+      <div>Salida: {select}</div>
+
+      <hr />
+
+      <input type="range" onChange={(e) => handleRange(e)} />
+      <br />
+      <input type="radio" name="all" onClick={() => setRadio(0)} />
+      <br />
+      <input type="radio" name="all" onClick={() => setRadio(1)} />
+      <LogicGates
+        input1={radio}
+        checkbox={range}
+        select={select2}
+        setSelect={setSelect2}
+      />
+      <div>Salida: {select2}</div>
+
+      <hr />
+
+      <LogicGates
+        input1={select}
+        checkbox={select2}
+        select={select3}
+        setSelect={setSelect3}
+      />
+      <div>Salida: {select3}</div>
     </div>
   );
 }
