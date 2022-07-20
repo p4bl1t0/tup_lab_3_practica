@@ -1,9 +1,9 @@
 import React from "react";
 
-const Body = ({ pageBody }) => {
+const Body = ({ body, className }) => {
   return (
-    <div>
-      <p>{pageBody}</p>
+    <div className={className}>
+      <p>{body}</p>
     </div>
   );
 };

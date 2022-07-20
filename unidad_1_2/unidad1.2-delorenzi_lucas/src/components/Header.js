@@ -1,10 +1,11 @@
 import React from "react";
 import Title from "./Title";
+import './Header.css';
 
-const Header = ({pageTitle}) => {
+const Header = ({ pageTitle }) => {
     return (
         <div>
-            <Title pageTitle = {pageTitle}/>
+            <Title className="title" title={pageTitle} />
         </div>
     );
 };
