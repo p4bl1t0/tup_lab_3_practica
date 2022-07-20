@@ -2,6 +2,7 @@ import "./App.css";
 import Page from "./components/Page";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import InputHandler from "./components/InputHandler";
 
 const App = () => {
   const site = {
@@ -16,6 +17,7 @@ const App = () => {
         <Header title={site.pageTitle} />
         <Main body={site.pageBody} links={site.links} />
       </Page>
+      <InputHandler/>
     </div>
   );
 };
