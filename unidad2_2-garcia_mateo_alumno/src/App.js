@@ -4,6 +4,8 @@ import "./App.css";
 function App() {
   const [input, setInput] = useState("");
   const [array, setArray] = useState([]);
+  const [value2, setValue2] = useState();
+  const [edit, setEdit] = useState(false);
 
   const inputHandler = (e) => {
     setInput(e.target.value);
@@ -13,15 +15,21 @@ function App() {
     setArray([]);
   };
 
-  const editInput = () => {
-    setInput("");
-    document.getElementById("edit").value = ;
-    
+  const editInput = (main) => {
+    setEdit(true);
+    setValue2(main);
   };
 
   const buttonHandler = () => {
-    input !== "" ? setArray([...array, input]) : alert("Ingrese un valor");
-    setInput("");
+    if (input !== "") {
+      if (!edit) {
+        setArray([...array, input]);
+      } else {
+        array[value2] = input;
+      }
+      setEdit(false);
+      setInput("");
+    }
   };
 
   return (
@@ -34,21 +42,24 @@ function App() {
       </div>
       <div>
         {array.map((value, main) => (
-          <p key={main}>
-            {}
+          <span key={main}>
             {Number(value) ? (
               Number(value % 2) === 0 ? (
-                <p>{Math.round(value)} es par</p>
+                <p>
+                  {Math.round(value)} es par
+                </p> 
               ) : (
                 <p>{Math.round(value)} es impar</p>
               )
             ) : (
               <div>
-                <button onClick={editInput}>Editar</button>
-                <input id="edit" type="text" value={value} />
+                <input type="text" value={value}></input>
               </div>
             )}
-          </p>
+            <div>
+              <button onClick={() => editInput(main)}>Editar</button>
+            </div>
+          </span>
         ))}
       </div>
       <div>
