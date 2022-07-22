@@ -2,10 +2,7 @@ import React from "react";
 import Select from "./Select";
 import { useState } from "react";
 
-const LogicGate = ({
-  inputValue,
-  checkBoxValue,
-}) => {
+const LogicGate = ({value1, value2, setLogicGateValue, logicGateValue }) => {
 
   const [selectValue, setSelectValue] = useState("OR");
   const selectHandler = (elem) => {
@@ -15,15 +12,15 @@ const LogicGate = ({
 
   const setResult = () => {
     if (selectValue === "OR") {
-      return inputValue || checkBoxValue?"TRUE":"FALSE";
+      setLogicGateValue(value1 || value2 ? 1 : 0);
     } else if (selectValue === "AND") {
-      return inputValue && checkBoxValue?"TRUE":"FALSE";
+      setLogicGateValue(value1 && value2 ? 1 : 0);
     } else if (selectValue === "NAND") {
-      return (1 - (inputValue && checkBoxValue))?"TRUE":"FALSE";
+      setLogicGateValue(1 - (value1 && value2) ? 1 : 0);
     } else if (selectValue === "NOR") {
-      return(1 - (inputValue || checkBoxValue))?"TRUE":"FALSE";
+      setLogicGateValue(1 - (value1 || value2) ? 1 : 0);
     } else if (selectValue === "XOR") {
-      return inputValue ^ checkBoxValue?"TRUE":"FALSE";
+      setLogicGateValue(value1 ^ value2 ? 1 : 0);
     }
   };
 
@@ -33,7 +30,7 @@ const LogicGate = ({
       <Select selectHandler={selectHandler} result={setResult} />
       <button onClick={setResult}>Submit</button>
       <br></br>
-      <span>Salida: {selectValue}</span>
+      <span>Salida: {logicGateValue}</span>
     </div>
   );
 };
