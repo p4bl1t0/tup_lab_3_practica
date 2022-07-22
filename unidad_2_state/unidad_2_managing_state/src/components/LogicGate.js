@@ -1,5 +1,5 @@
 import React from "react";
-
+import Select from "./Select";
 import { useState } from "react";
 
 const LogicGate = ({
@@ -27,19 +27,13 @@ const LogicGate = ({
     }
   };
 
+
   return (
     <div>
-      <label for="selectGate">Compuerta lógica:</label>
-      <select id="selectGate" value={selectValue} onChange={selectHandler}>
-        <option value="OR">OR</option>
-        <option value="AND">AND</option>
-        <option value="NAND">NAND</option>
-        <option value="NOR">NOR</option>
-        <option value="XOR">XOR</option>
-      </select>
-      <div>
-        <span>Salida: {setResult()}</span>
-      </div>
+      <Select selectHandler={selectHandler} result={setResult} />
+      <button onClick={setResult}>Submit</button>
+      <br></br>
+      <span>Salida: {selectValue}</span>
     </div>
   );
 };

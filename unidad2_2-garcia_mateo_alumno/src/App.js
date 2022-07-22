@@ -15,7 +15,7 @@ function App() {
 
   const editInput = () => {
     setInput("");
-    document.getElementById("edit").value = input2;
+    document.getElementById("edit").value = ;
     
   };
 
