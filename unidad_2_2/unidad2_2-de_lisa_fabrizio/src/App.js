@@ -5,8 +5,10 @@ import NumberRender from "./NumberRender";
 import "./App.css";
 
 function App() {
+
   const [inputString, setInputString] = useState([]);
   const [textValue, setTextValue] = useState("");
+
 
   const buttonHandler = () => {
     if (textValue) {
@@ -23,31 +25,39 @@ function App() {
     }
   };
 
+
   const inputTextHandler = (e) => {
     setTextValue(e.target.value);
   };
 
 
   const eraseButtonHandler = (id) => {
-    const newArrayInputs = inputString.filter((item) => item.id !== id)
-    setInputString(newArrayInputs)
+    const newArrayInputs = inputString.filter((item) => item.id !== id);
+    setInputString(newArrayInputs);
   };
 
 
-  const editButtonHandler = () => {
-    console.log("estoy en Editame");
+  const editButtonHandler = (id) => {
+    const newInput = "Se cambió el texto";
+    const newArrayWhitEdit = inputString.map((item) =>
+      item.id === id ? { ...item, text: newInput } : item
+    );
+    setInputString(newArrayWhitEdit);
   };
 
 
   const inputsMapper = inputString.map((itemArray) =>
-    isNaN(itemArray.text) ? (
-        <WordRender
-          itemArray={itemArray}
-          eraseButtonHandler={eraseButtonHandler}
-          editButtonHandler={editButtonHandler}
-        />
+    isNaN( itemArray.text ) ? (
+      <WordRender
+        itemArray={itemArray}
+        eraseButtonHandler={eraseButtonHandler}
+        editButtonHandler={editButtonHandler}
+      />
     ) : (
-        <NumberRender itemArray={itemArray} eraseButtonHandler={eraseButtonHandler} />
+      <NumberRender
+        itemArray={itemArray}
+        eraseButtonHandler={eraseButtonHandler}
+      />
     )
   );
 
