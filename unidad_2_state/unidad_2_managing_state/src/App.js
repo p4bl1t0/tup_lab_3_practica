@@ -1,7 +1,7 @@
 import { useState } from "react";
-import LogicGates from "./LogicGates";
-import CheckBox from "./CheckBox";
-import Input1 from "./Input1";
+import LogicGates from "./components/LogicGates";
+import CheckBox from "./components/CheckBox";
+import Input1 from "./components/Input1";
 
 import "./App.css";
 
@@ -9,7 +9,7 @@ function App() {
 
   const [inputValue, setInputValue] = useState(Math.round(Math.random()));
   const [checkBox, setCheckBox] = useState(0);
-  const [range, setRange] = useState(0);
+  const [range, setRange] = useState(1);
   const [radio, setRadio] = useState(0);
 
   const radioHandler = (event) => {
@@ -42,7 +42,7 @@ function App() {
             Entrada 4:
             <br />
             <label>
-              0<input type="radio" name="binary" value={0} />
+              0<input type="radio" name="binary" value={0} checked/>
             </label>
             <label>
               - 1<input type="radio" name="binary" value={1} />
