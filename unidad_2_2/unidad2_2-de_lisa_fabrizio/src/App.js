@@ -10,7 +10,14 @@ function App() {
 
   const buttonHandler = () => {
     if (textValue) {
-      const newSetArray = [...inputString, textValue];
+      const newSetArray = [
+        ...inputString,
+        {
+          text: textValue,
+          id: Math.random().toString(),
+        },
+      ];
+
       setInputString(newSetArray);
       setTextValue("");
     }
@@ -20,11 +27,27 @@ function App() {
     setTextValue(e.target.value);
   };
 
+
+  const eraseButtonHandler = (id) => {
+    const newArrayInputs = inputString.filter((item) => item.id !== id)
+    setInputString(newArrayInputs)
+  };
+
+
+  const editButtonHandler = () => {
+    console.log("estoy en Editame");
+  };
+
+
   const inputsMapper = inputString.map((itemArray) =>
-    isNaN(itemArray) ? (
-      <WordRender itemArray={itemArray} />
+    isNaN(itemArray.text) ? (
+        <WordRender
+          itemArray={itemArray}
+          eraseButtonHandler={eraseButtonHandler}
+          editButtonHandler={editButtonHandler}
+        />
     ) : (
-      <NumberRender itemArray={itemArray} />
+        <NumberRender itemArray={itemArray} eraseButtonHandler={eraseButtonHandler} />
     )
   );
 
