@@ -51,10 +51,7 @@ const LogicGates = ({ input1, input2, onOutputChange }) => {
         </select>
       </div>
       <div>
-        <br></br>
-        <br></br>
         <span>Salida: {handleOutput() === 1 ? "true" : "false"}</span>
-        <br></br>
       </div>
     </div>
   );

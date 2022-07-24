@@ -41,33 +41,25 @@ const App = () => {
         <div>
           <CheckBox checked={checked} handleCheckBox={handleCheckBox} />
         </div>
-        <br></br>
+
         <LogicGates input1={inputValue} input2={checked} value={firstDoor} onOutputChange={setFirstDoor} />
       </div>
-      <br></br>
-      <br></br>
 
       <div>
         <h4>2</h4>
         <input type="range" min="0" max="1" value={inputRange} onChange={handleRangeInput} ></input>
-        <br></br>
 
+      <div>
         <label htmlFor="0">0</label>
         <input type="radio" name="radio-input" value="0" onChange={handleRadioInput} ></input>
-        <br></br>
-
+        </div>
         <div>
           <label htmlFor="1">1</label>
           <input type="radio" name="radio-input" value="1"onChange={handleRadioInput}></input>
         </div>
-        <br></br>
         <LogicGates input1={inputRadio} input2={inputRange} onOutputChange={setSecondDoor} value={secondDoor}
         />
       </div>
-
-      <br></br>
-      <br></br>
-
       <div>
         <h4>Cálculo 1 y 2</h4>
         <LogicGates input1={firstDoor} input2={secondDoor} />
