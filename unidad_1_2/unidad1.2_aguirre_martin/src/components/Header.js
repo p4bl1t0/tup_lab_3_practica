@@ -4,7 +4,7 @@ import Title from './Title';
 const Header = ({ pageTitle }) => {
   return (
     <div>    
-        <Title pageTitle = {pageTitle} />
+        <Title title = {pageTitle.toUpperCase()} />
     </div>
   );
 };

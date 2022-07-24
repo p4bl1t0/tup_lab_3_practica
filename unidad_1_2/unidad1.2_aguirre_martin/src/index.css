@@ -12,6 +12,17 @@ code {
     monospace;
 }
 
-li {
+li, a:link {
   list-style: none;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.info-news {
+  margin: 3%;
+  padding: 1% 2% 2% 2%;  
+  background-color: brown;
+  color: snow;
 }
