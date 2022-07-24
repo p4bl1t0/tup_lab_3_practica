@@ -1,32 +1,38 @@
 import { useState } from "react";
 
-const LogicGates = ({ newInput, checkboxInput }) => {
+const LogicGates = ({ valueOne, valueTwo, setGateValue, gateValue }) => {
   const [selectInput, setSelectInput] = useState("");
   
   const selectChangeHandler = (e) => {
     setSelectInput(e.target.value);
   };
-  const selectGate = () => {
+  
+  const gateResult = () => {
     switch (selectInput) {
       case "and":
-        return Number(newInput && checkboxInput);
+        setGateValue(valueOne && valueTwo ? 1 : 0);
+        break;
       case "or":
-        return Number(newInput || checkboxInput);
+        setGateValue(valueOne || valueTwo ? 1 : 0);
+        break;
       case "xor":
-        return Number(newInput !== checkboxInput);
+        setGateValue(valueOne !== valueTwo ? 1 : 0);
+        break;
       case "nand":
-        return Number(!(newInput && checkboxInput));
+        setGateValue(!(valueOne && valueTwo) ? 1 : 0);
+        break;
       case "nor":
-        return Number(!(newInput || checkboxInput));
+        setGateValue(!(valueOne || valueTwo) ? 1 : 0);
+        break;
       default:
-        return "Seleccione una puerta lógica";
+        return "Seleccione una compuerta lógica";
     }
   };
 
   return (
     <div>
-      <label for="selectGate">Compuerta lógica:</label>
-      <select id="selectGate" onChange={selectChangeHandler}>
+      <label htmlFor="gateResult">Compuerta lógica:</label>
+      <select id="gateResult" onChange={selectChangeHandler}>
         <option value="or">OR</option>
         <option value="and">AND</option>
         <option value="nand">NAND</option>
@@ -34,8 +40,10 @@ const LogicGates = ({ newInput, checkboxInput }) => {
         <option value="xor">XOR</option>
       </select>
       <div>
+        <button onClick={gateResult}>Calcular compuerta</button>
+        <br></br>
         <span>
-          Salida: { selectGate() }
+          Salida: {gateValue}
         </span>
       </div>
     </div>
