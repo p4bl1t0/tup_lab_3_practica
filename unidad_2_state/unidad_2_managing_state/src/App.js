@@ -1,22 +1,28 @@
-import './App.css';
-
+import "./App.css";
+import { useState } from "react";
+import CheckBox from "./components/CheckBox";
+import Input from "./components/Input";
+import LogicGates from "./components/LogicGates";
 function App() {
+  const [input1, setInput1] = useState();
+  const [input2, setInput2] = useState();
+  const [value, setValue] = useState();
+
   return (
     <div className="App">
       <div>
-        <label for="input1">Entrada 1:</label>
-        <input type="number" id="input1" />
+        <Input input1={input1} setInput1={setInput1} />
       </div>
       <div>
-        <label><input type="checkbox" /> Entrada 2</label>
+        <CheckBox input2={input2} setInput2={setInput2} />
       </div>
-        <div>
-        <label for="selectGate">Compuerta lógica:</label>
-        <select id="selectGate"></select>
+      <div>
+        <LogicGates input1={input1} input2={input2} setValue={setValue} />
       </div>
-        <div><span>Salida: { /* aca iria el resultado*/ }</span></div>
+      <div>
+        <span>Salida: {value}</span>
+      </div>
     </div>
   );
 }
-
 export default App;

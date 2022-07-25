@@ -1,44 +1,70 @@
-# Unidad 2 - Manejo de estados - Práctica
+# Getting Started with Create React App
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Pre-requisitos
+## Available Scripts
 
-Instalar las dependencias del ejercicio:
+In the project directory, you can run:
 
-```
-npm install
-```
+### `npm start`
 
-Considerando el JSX brindado en `App.js` 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Tarea 1
-- Crear un state para el valor del `input1` definirle un valor inicial random (1 o 0).
-- Permitir que el usuario pueda cambiarle el valor a `input1` definiendo 1 o 0. Si el usuario cargase otra cosa setear el valor 0.
+### `npm test`
 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Tarea 2
-- Capturar el valor del `checkbox` en un estado de React si el input está seleccionado guardar 1 sino guardar 0.
-- Completar los valores posibles del `select` para elegir algunas de las compuertas lógicas (or, and, nand, nor y xor). Ver: https://en.wikipedia.org/wiki/Logic_gate
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Tarea 3
-- Capturar el evento de cambio del contenido del `select` y mostrar el resultado de aplicar la puerta lógica seleccionada al valor del estado de `input1` y el de `checkbox` de  en el espacio reservado para tar fin
-- Bonus: Refactorizar la selección y el cálculo de la compuerta lógica como un componente.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Tarea 3
-- Capturar el evento de cambio del contenido del `select` y mostrar el resultado de aplicar la puerta lógica seleccionada al valor del estado de `input1` y el de `checkbox` de  en el espacio reservado para tar fin
-- Bonus: Refactorizar la selección y el cálculo de la compuerta lógica como un componente.
+### `npm run eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### Tarea 4
-- Refactorizar la selección y el cálculo de la compuerta lógica como un componente llamado `LogicGates`
-- Refactorizar `input1` y `checkbox` como componentes apartes, capturar su cambio de valor y pasarselo al componente `LogicGates` para su cálculo.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Tarea 5
-- Cambiar lo necesario en `LogicGates` para que al calcularse un nuevo valor de compuerta pueda ser usado por un componente que lo esté invocando.
-- Agregar dos nuevos inputs en App.js (type `range` y `radio`) para capturar dos entradas más 0 o 1.
-- Utilizar `LogicGates` para aplicar una compuerta lógica a estas 2 nuevas entradas
-- Utilizar `LogicGates` para aplicar una compuerta lógica a las 2 `LogicGates` previamente calculadas.
-- Bonus: Utilizar CSS y HTML adicional para que el formulario quede lo más claro posible en términos de visualización.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
