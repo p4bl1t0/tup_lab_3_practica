@@ -1,41 +1,42 @@
 import { useState } from "react";
 
 export default function LogicGates({ value1, value2 }) {
-  const [resultLogicGate, setResultLogicGate] = useState(null);
-  const [gateValue, setGateValue] = useState(resultLogicGate);
+
+  const [gateValue, setGateValue] = useState(null);
+  const [caseSelected, SetCaseSelected] = useState(null);
 
   const changeSelectGate = (event) => {
-    switch (event.target.value) {
+   SetCaseSelected(event.target.value)
+  };
+  
+  const calculateButton = () => {
+    switch (caseSelected) {
       case "OR":
-        setResultLogicGate(value1 || value2 ? 1 : 0);
+        setGateValue(value1 || value2 ? 1 : 0);
         break;
       case "AND":
-        setResultLogicGate(value1 && value2 ? 1 : 0);
+        setGateValue(value1 && value2 ? 1 : 0);
         break;
       case "NOR":
-        setResultLogicGate(value1 || value2 ? 0 : 1);
+        setGateValue(value1 || value2 ? 0 : 1);
         break;
       case "NAND":
-        setResultLogicGate(value1 && value2 ? 0 : 1);
+        setGateValue(value1 && value2 ? 0 : 1);
         break;
       case "XOR":
-        setResultLogicGate(value1 !== value2 ? 1 : 0);
+        setGateValue(value1 !== value2 ? 1 : 0);
         break;
       default:
-        setResultLogicGate(null);
+        setGateValue(null);
         break;
     }
-  };
-
-  const calculateButton = () => {
-    setGateValue(resultLogicGate);
   };
 
   return (
     <div>
       <label for="selectGate">Compuerta lógica:</label>
       <br />
-      <select id="selectGate" onClick={changeSelectGate}>
+      <select id="selectGate" onChange={changeSelectGate}>
       <option>Seleccionar</option>
         <option>OR</option>
         <option>AND</option>
@@ -53,5 +54,5 @@ export default function LogicGates({ value1, value2 }) {
         </span>
       </div>
     </div>
-  );
-}
+  )
+};

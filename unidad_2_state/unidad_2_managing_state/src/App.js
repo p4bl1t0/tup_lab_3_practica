@@ -42,7 +42,7 @@ function App() {
             Entrada 4:
             <br />
             <label>
-              0<input type="radio" name="binary" value={0} checked/>
+              0<input type="radio" name="binary" value={0} />
             </label>
             <label>
               - 1<input type="radio" name="binary" value={1} />
